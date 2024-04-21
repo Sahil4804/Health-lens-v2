@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import yourselfgenerate from './yourself_data.js';
+import data_30 from './yourself_data.js';
 // import { data11, data12 } from './p1_data.js';
 
 
@@ -17,16 +17,18 @@ HighchartsExportData(Highcharts);
 HighchartsAccessibility(Highcharts);
 HighchartsMore(Highcharts);
 
-const data1 = [];
 
-for (let hour = 0; hour < 24; hour++) {
-  const hourString = hour.toString().padStart(2, '0') + ':00';
-  data1.push(yourselfgenerate[hourString]['Yourself']);
-}
+
+
 
 const Linechart = (props) => {
   const chartRef = useRef(null);
   console.log(props.date_used);
+  const data1 = [];
+  for (let hour = 0; hour < 24; hour++) {
+    const hourString = hour.toString().padStart(2, '0') + ':00';
+    data1.push(data_30[props.date_used-1][hourString]['Yourself']);
+  }
   useEffect(() => {
     return () => {
       // Destroy the chart instance when the component unmounts

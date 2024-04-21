@@ -5,7 +5,7 @@ import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
 
 
 import frienddata from './friend_data.js'
-import yourselfgenerate from './yourself_data.js'
+import data_30 from './yourself_data.js'
 
 // console.log(frienddata);
 // console.log(yourselfgenerate);
@@ -25,12 +25,11 @@ const combineData = (frienddata, yourselfgenerate) => {
     return data;
 }
 
-
-const allData = combineData(frienddata, yourselfgenerate);
-
 const Race2 = (props) => {
   const chartRef = useRef(null);
-  console.log(props.date_used);
+ 
+  const allData = combineData(frienddata, data_30[props.date_used-1]);
+
   useEffect(() => {
     let root = am5.Root.new(chartRef.current);
 
@@ -258,7 +257,7 @@ function sortCategoryAxis() {
     return () => {
       root.dispose();
     };
-  }, []);
+  }, [props.date_used]);
 
 //   return <div ref={chartRef} style={{ width: '600px', height: '800px' }} />;
   return (
