@@ -13,127 +13,127 @@ highchartsAccessibility(Highcharts);
 
 const data = [{
     date: '2023-07-01',
-    temperature: 19.1
+    Stepcount: 13217
 },
 {
     date: '2023-07-02',
-    temperature: 15.3
+    Stepcount: 9440
 },
 {
     date: '2023-07-03',
-    temperature: 16.4
+    Stepcount: 11252
 },
 {
     date: '2023-07-04',
-    temperature: 16.0
+    Stepcount: 10532
 },
 {
     date: '2023-07-05',
-    temperature: 17.9
+    Stepcount: 11560
 },
 {
     date: '2023-07-06',
-    temperature: 15.8
+    Stepcount: 11505
 },
 {
     date: '2023-07-07',
-    temperature: 21.1
+    Stepcount: 11805
 },
 {
     date: '2023-07-08',
-    temperature: 23.3
+    Stepcount: 11840
 },
 {
     date: '2023-07-09',
-    temperature: 24.8
+    Stepcount: 11658
 },
 {
     date: '2023-07-10',
-    temperature: 25.1
+    Stepcount: 14211
 },
 {
     date: '2023-07-11',
-    temperature: 18.2
+    Stepcount: 11457
 },
 {
     date: '2023-07-12',
-    temperature: 14.4
+    Stepcount: 11169
 },
 {
     date: '2023-07-13',
-    temperature: 19.3
+    Stepcount: 10981
 },
 {
     date: '2023-07-14',
-    temperature: 20.2
+    Stepcount: 12794
 },
 {
     date: '2023-07-15',
-    temperature: 15.8
+    Stepcount: 11166
 },
 {
     date: '2023-07-16',
-    temperature: 16.1
+    Stepcount: 12720
 },
 {
     date: '2023-07-17',
-    temperature: 15.7
+    Stepcount: 12817
 },
 {
     date: '2023-07-18',
-    temperature: 19.2
+    Stepcount: 10179
 },
 {
     date: '2023-07-19',
-    temperature: 18.6
+    Stepcount: 11709
 },
 {
     date: '2023-07-20',
-    temperature: 18.3
+    Stepcount: 10737
 },
 {
     date: '2023-07-21',
-    temperature: 15.0
+    Stepcount: 10445
 },
 {
     date: '2023-07-22',
-    temperature: 14.7
+    Stepcount: 12511
 },
 {
     date: '2023-07-23',
-    temperature: 18.8
+    Stepcount: 12568
 },
 {
     date: '2023-07-24',
-    temperature: 17.7
+    Stepcount: 14331
 },
 {
     date: '2023-07-25',
-    temperature: 17.4
+    Stepcount: 11353
 },
 {
     date: '2023-07-26',
-    temperature: 17.6
+    Stepcount: 10405
 },
 {
     date: '2023-07-27',
-    temperature: 18.1
+    Stepcount: 12257
 },
 {
     date: '2023-07-28',
-    temperature: 18.2
+    Stepcount: 12604
 },
 {
     date: '2023-07-29',
-    temperature: 20.3
+    Stepcount: 13782
 },
 {
     date: '2023-07-30',
-    temperature: 16.4
+    Stepcount: 9922
 },
 {
     date: '2023-07-31',
-    temperature: 17.0
+    Stepcount: 11658
 }];
 const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -163,7 +163,7 @@ function generateChartData(data) {
     });
   }
 
-  // Loop through and populate with temperature and dates from the dataset
+  // Loop through and populate with Stepcount and dates from the dataset
   for (let day = 1; day <= monthLength; day++) {
     // Get date from the given data array
     const date = data[day - 1].date;
@@ -172,13 +172,13 @@ function generateChartData(data) {
     const yCoordinate = Math.floor((firstWeekday + day - 1) / 7);
     const id = day;
 
-    // Get the corresponding temperature for the current day from the given array
-    const temperature = data[day - 1].temperature;
+    // Get the corresponding Stepcount for the current day from the given array
+    const Stepcount = data[day - 1].Stepcount;
 
     chartData.push({
       x: xCoordinate,
       y: 5 - yCoordinate,
-      value: temperature,
+      value: Stepcount,
       date: new Date(date).getTime(),
       custom: {
         monthDay: id,
@@ -209,11 +209,11 @@ const options = {
     type: "heatmap",
   },
   title: {
-    text: "Day temperature in Oslo, Norway July 2023",
+    text: "Day Stepcount of Person in July",
     align: "left",
   },
   subtitle: {
-    text: "Temperature variation at day through July",
+    text: "Stepcount variation at day through July",
     align: "left",
   },
   accessibility: {
@@ -270,7 +270,7 @@ const options = {
       [0.9, "#F9A05C"],
     ],
     labels: {
-      format: "{value} °C",
+      format: "{value} steps",
     },
   },
   series: [
@@ -336,11 +336,11 @@ const HeatmapChart = () => {
             type: "heatmap",
           },
           title: {
-            text: "Day temperature in Oslo, Norway July 2023",
+            text: "Day Stepcount of Person July 2023",
             align: "left",
           },
           subtitle: {
-            text: "Temperature variation at day through July",
+            text: "Stepcount variation at day through July",
             align: "left",
           },
           accessibility: {
@@ -397,7 +397,7 @@ const HeatmapChart = () => {
               [0.9, "#F9A05C"],
             ],
             labels: {
-              format: "{value} °C",
+              format: "{value} steps",
             },
           },
           series: [
@@ -411,7 +411,7 @@ const HeatmapChart = () => {
                 {
                   enabled: true,
                   format:
-                    "{#unless point.custom.empty}{point.value:.1f}°{/unless}",
+                    "{#unless point.custom.empty}{point.value}{/unless}",
                   style: {
                     textOutline: "none",
                     fontWeight: "normal",

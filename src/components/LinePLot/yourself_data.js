@@ -808,7 +808,34 @@ const data_30 = [
           '22:00': { Yourself: 9632 },
           '23:00': { Yourself: 9922 },
           '24:00': { Yourself: 10888 }
-        }
+        },
+        {
+            '00:00': { Yourself: 0 },
+            '01:00': { Yourself: 203 },
+            '02:00': { Yourself: 1010 },
+            '03:00': { Yourself: 1024 },
+            '04:00': { Yourself: 1070 },
+            '05:00': { Yourself: 1571 },
+            '06:00': { Yourself: 2476 },
+            '07:00': { Yourself: 2775 },
+            '08:00': { Yourself: 3490 },
+            '09:00': { Yourself: 3827 },
+            '10:00': { Yourself: 4224 },
+            '11:00': { Yourself: 4872 },
+            '12:00': { Yourself: 5176 },
+            '13:00': { Yourself: 5839 },
+            '14:00': { Yourself: 5949 },
+            '15:00': { Yourself: 6315 },
+            '16:00': { Yourself: 7155 },
+            '17:00': { Yourself: 7227 },
+            '18:00': { Yourself: 7346 },
+            '19:00': { Yourself: 7925 },
+            '20:00': { Yourself: 8081 },
+            '21:00': { Yourself: 8121 },
+            '22:00': { Yourself: 9232 },
+            '23:00': { Yourself: 11658 },
+            '24:00': { Yourself: 10888 }
+          },
 ]      
 
 export default data_30;
