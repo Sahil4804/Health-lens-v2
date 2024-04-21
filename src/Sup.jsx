@@ -31,20 +31,24 @@ function Sup({ option }) {
   return (
 
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
-
-      <Sidebar />
+      
       <div >
         <Navbar />
+        
+
+        
         <App isloading={isloading} changer={makefalse} />
+    
         {/* <StepCountsGraph /> */}
       </div>
+
       <div style={{ position: 'relative' }}>
         <Heatmap />
       </div>
       <div style={{position:'relative',top:'110vh'}}>
         <HeatmapChart/>
       </div>
-      
+
 
     </ThemeProvider>
   );
