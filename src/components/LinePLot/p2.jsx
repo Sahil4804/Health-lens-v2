@@ -1,0 +1,280 @@
+import React, { useEffect, useRef } from 'react';
+import * as am5 from '@amcharts/amcharts5';
+import * as am5xy from '@amcharts/amcharts5/xy';
+import am5themes_Animated from '@amcharts/amcharts5/themes/Animated';
+
+
+import frienddata from './friend_data.js'
+import yourselfgenerate from './yourself_data.js'
+
+// console.log(frienddata);
+// console.log(yourselfgenerate);
+
+const combineData = (frienddata, yourselfgenerate) => {
+    const data = {};
+    for (let hour = 0; hour < 24; hour++) {
+        const hourString = hour.toString().padStart(2, '0') + ':00';
+        const hourData = {};
+        for (let friend = 1; friend <= 6; friend++) {
+            const friendName = 'Friend ' + friend;
+            hourData[friendName] = frienddata[hourString][friendName];
+        }
+        hourData['Yourself'] = yourselfgenerate[hourString]['Yourself'];
+        data[hourString] = hourData;
+    }
+    return data;
+}
+
+
+const allData = combineData(frienddata, yourselfgenerate);
+
+const Race2 = () => {
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    let root = am5.Root.new(chartRef.current);
+
+    root.numberFormatter.setAll({
+        numberFormat: "#a",
+        bigNumberPrefixes: [
+            { number: 1e6, suffix: "M" },
+            { number: 1e9, suffix: "B" }
+        ],
+        smallNumberPrefixes: []
+    });
+
+    var stepDuration = 1000;
+
+        // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([am5themes_Animated.new(root)]);
+
+    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+        panX: true,
+        panY: true,
+        wheelX: "none",
+        wheelY: "none",
+        paddingLeft: 0
+    }));
+
+    chart.zoomOutButton.set("forceHidden", true);
+
+    var yRenderer = am5xy.AxisRendererY.new(root, {
+        minGridDistance: 20,
+        inversed: true,
+        minorGridEnabled: true
+    });
+
+    yRenderer.grid.template.set("visible", false);
+
+    var yAxis = chart.yAxes.push(am5xy.CategoryAxis.new(root, {
+        maxDeviation: 0,
+        categoryField: "network",
+        renderer: yRenderer
+    }));
+
+    var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
+        maxDeviation: 0,
+        min: 0,
+        strictMinMax: true,
+        extraMax: 0.1,
+        renderer: am5xy.AxisRendererX.new(root, {})
+    }));
+
+    xAxis.set("interpolationDuration", stepDuration / 10);
+    xAxis.set("interpolationEasing", am5.ease.linear);
+
+    var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+        xAxis: xAxis,
+        yAxis: yAxis,
+        valueXField: "value",
+        categoryYField: "network"
+    }));
+
+    series.columns.template.setAll({ cornerRadiusBR: 5, cornerRadiusTR: 5 });
+
+    series.columns.template.adapters.add("fill", function (fill, target) {
+        return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+
+    series.columns.template.adapters.add("stroke", function (stroke, target) {
+        return chart.get("colors").getIndex(series.columns.indexOf(target));
+    });
+
+    series.bullets.push(function () {
+        return am5.Bullet.new(root, {
+            locationX: 1,
+            sprite: am5.Label.new(root, {
+                text: "{valueXWorking.formatNumber('#.# a')}",
+                fill: root.interfaceColors.get("alternativeText"),
+                centerX: am5.p100,
+                centerY: am5.p50,
+                populateText: true
+            })
+        });
+    });
+
+    var label = chart.plotContainer.children.push(am5.Label.new(root, {
+        text: "00:00",
+        fontSize: "8em",
+        opacity: 0.2,
+        x: am5.p100,
+        y: am5.p100,
+        centerY: am5.p100,
+        centerX: am5.p100
+    }));
+
+    function getSeriesItem(category) {
+    for (var i = 0; i < series.dataItems.length; i++) {
+        var dataItem = series.dataItems[i];
+        if (dataItem.get("categoryY") == category) {
+        return dataItem;
+        }
+    }
+}
+
+function sortCategoryAxis() {
+  // sort by value
+  series.dataItems.sort(function (x, y) {
+    return y.get("valueX") - x.get("valueX"); // descending
+    //return x.get("valueX") - y.get("valueX"); // ascending
+  });
+
+  // go through each axis item
+  am5.array.each(yAxis.dataItems, function (dataItem) {
+    // get corresponding series item
+    var seriesDataItem = getSeriesItem(dataItem.get("category"));
+
+    if (seriesDataItem) {
+      // get index of series data item
+      var index = series.dataItems.indexOf(seriesDataItem);
+      // calculate delta position
+      var deltaPosition =
+        (index - dataItem.get("index", 0)) / series.dataItems.length;
+      // set index to be the same as series data item index
+      if (dataItem.get("index") != index) {
+        dataItem.set("index", index);
+        // set deltaPosition instanlty
+        dataItem.set("deltaPosition", -deltaPosition);
+        // animate delta position to 0
+        dataItem.animate({
+          key: "deltaPosition",
+          to: 0,
+          duration: stepDuration / 2,
+          easing: am5.ease.out(am5.ease.cubic)
+        });
+      }
+    }
+  });
+  // sort axis items by index.
+  // This changes the order instantly, but as deltaPosition is set, they keep in the same places and then animate to true positions.
+  yAxis.dataItems.sort(function (x, y) {
+    return x.get("index") - y.get("index");
+  });
+}
+
+    var hour = "00:00";
+
+    var interval = setInterval(function () {
+        var hourParts = hour.split(":");
+        var nextHour = parseInt(hourParts[0]) + 1;
+        if (nextHour < 10) {
+            nextHour = "0" + nextHour;
+        }
+        if (nextHour > 23) {
+            clearInterval(interval);
+            clearInterval(sortinterval);
+        } else {
+            hour = nextHour + ":00";
+            updateData();
+        }
+    }, stepDuration);
+
+    var sortInterval = setInterval(function () {
+        sortCategoryAxis();
+    }, 100);
+
+    function setInitialData() {
+       var d = allData[hour];
+        // Assign the sorted data back to d
+        for (var n in d) {
+            series.data.push({ network: n, value: d[n] });
+            yAxis.data.push({ network: n });
+        }
+    }
+
+  
+    function updateData() {
+  var itemsWithNonZero = 0;
+
+  if (allData[hour]) {
+    label.set("text", hour.toString());
+
+    am5.array.each(series.dataItems, function (dataItem) {
+      var category = dataItem.get("categoryY");
+      var value = allData[hour][category];
+
+      if (value > 0) {
+        itemsWithNonZero++;
+      }
+
+      dataItem.animate({
+        key: "valueX",
+        to: value,
+        duration: stepDuration,
+        easing: am5.ease.linear
+      });
+      dataItem.animate({
+        key: "valueXWorking",
+        to: value,
+        duration: stepDuration,
+        easing: am5.ease.linear
+      });
+    });
+
+    yAxis.zoom(0, itemsWithNonZero / yAxis.dataItems.length);
+  }
+}
+
+
+    setInitialData();
+    setTimeout(function () {
+        var hourParts = hour.split(":");
+        var nextHour = parseInt(hourParts[0]) + 1;
+        if (nextHour < 10) {
+            nextHour = "0" + nextHour;
+        }
+        if (nextHour > 23) {
+            clearInterval(interval);
+        } else {
+            hour = nextHour + ":00";
+            updateData();
+        }
+    }, 50);
+
+    series.appear(1000);
+    chart.appear(1000, 100);
+
+    return () => {
+      root.dispose();
+    };
+  }, []);
+
+//   return <div ref={chartRef} style={{ width: '600px', height: '800px' }} />;
+  return (
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh', /* Optional: makes the container full height of the viewport */
+    }}>
+      <div style={{
+        border: '1px solid #ccc',
+        width: '800px',
+        height: '600px'
+      }} ref={chartRef}></div>
+    </div>
+  );
+};
+
+export default Race2;
