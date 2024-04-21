@@ -65,6 +65,12 @@ function Heatmap() {
     console.log(newdating);
     setheatmap(newdating);
   }
+  const colorRanges = [
+    { label: "Less than 1400", color: "#d6e685" },   // Color for values between 1200 and 1399
+    { label: "Less than 1600", color: "#8cc665" },   // Color for values between 1400 and 1599
+    { label: "Less than 1800", color: "#44a340" },   // Color for values between 1600 and 1799
+    { label: "Greater than or equal to 1800", color: "#1e6823" },  // Color for values greater than or equal to 1800
+  ];
   return (
     <div
       style={{
@@ -83,7 +89,19 @@ function Heatmap() {
           if (!value) {
             return "color-empty";
           }
-          return `${value.count}` < 5 ? `color-github-${value.count}` : `color-github-5`;
+          const count = value.count;
+          if (count < 1200) {
+            return "color-github-1"; // Color for values less than 5
+          } else if (count < 1400) {
+            // Adjust the ranges as needed
+            return "color-github-2"; // Color for values between 5 and 100
+          } else if (count < 1600) {
+            return "color-github-3"; // Color for values between 100 and 500
+          } else if (count < 1800) {
+            return "color-github-4"; // Color for values between 500 and 1000
+          } else {
+            return "color-github-5"; // Color for values greater than or equal to 1000
+          }
         }}
         tooltipDataAttrs={(value) => {
           return {
@@ -112,6 +130,19 @@ function Heatmap() {
           }}
         />
       </Space>
+
+
+      <div>
+      <h3>Color Scale Legend</h3>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+        {colorRanges.map((range, index) => (
+          <div key={index} style={{ display: "flex", alignItems: "center", margin: "5px" }}>
+            <div style={{ width: "20px", height: "20px", backgroundColor: range.color, marginRight: "5px" }}></div>
+            <span>{range.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
     </div>
   );
 }
