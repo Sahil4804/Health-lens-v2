@@ -313,7 +313,7 @@ const HeatmapChart = () => {
   return (
     <div>
           <HighchartsReact highcharts={Highcharts} options={options} />
-          <h2>hii</h2>
+          
     </div>
   );
 };

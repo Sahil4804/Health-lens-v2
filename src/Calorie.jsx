@@ -171,7 +171,7 @@ const PieChart = (props) => {
     useEffect(() => {
         let updatedOptions = { ...options }; // Create a copy of the options object
         // Update the options object with new data based on props
-        const li1 = [0.4, 0.3, 0.15, 0.15];
+        const li1 = [0.4, 0.3, 0.15, 0.1];
         let tot_sum = 0;
         updatedOptions.series[0].data[0].y = props.achieved * li1[0] * 8;
         tot_sum += updatedOptions.series[0].data[0].y;
@@ -179,7 +179,7 @@ const PieChart = (props) => {
         tot_sum += updatedOptions.series[0].data[1].y;
         updatedOptions.series[0].data[2].y = props.achieved * li1[2] * 8;
         tot_sum += updatedOptions.series[0].data[2].y;
-        updatedOptions.series[0].data[3].y = props.goal * li1[3] * 8;
+        updatedOptions.series[0].data[3].y = props.achieved * li1[3] * 8;
         tot_sum += updatedOptions.series[0].data[3].y;
         updatedOptions.series[0].data[4].y = props.goal - props.achieved;
         console.log("Updated Options:", updatedOptions);
