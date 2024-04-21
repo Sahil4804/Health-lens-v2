@@ -17,124 +17,124 @@ ExportData(Highcharts);
 Accessibility(Highcharts);
 
 const data = JSON.parse(`[[
-  { "x": 1, "y": 1, "z": 20, "t": 1 },
-  { "x": 2, "y": 1, "z": 45, "t": 1 },
-  { "x": 3, "y": 1, "z": 12, "t": 1 },
-  { "x": 4, "y": 1, "z": 37, "t": 1 },
-  { "x": 5, "y": 1, "z": 42, "t": 1 },
-  { "x": 6, "y": 1, "z": 50, "t": 1 },
-  { "x": 7, "y": 1, "z": 55, "t": 1 },
-  { "x": 8, "y": 1, "z": 57, "t": 1 },
-  { "x": 9, "y": 1, "z": 86, "t": 1 },
-  { "x": 10, "y": 1, "z": 92, "t": 1 },
-  { "x": 11, "y": 1, "z": 49, "t": 1 },
-  { "x": 12, "y": 1, "z": 42, "t": 1 },
-  { "x": 13, "y": 1, "z": 60, "t": 1 },
-  { "x": 14, "y": 1, "z": 65, "t": 1 },
-  { "x": 15, "y": 1, "z": 48, "t": 1 },
-  { "x": 16, "y": 1, "z": 97, "t": 1 },
-  { "x": 17, "y": 1, "z": 87, "t": 1 },
-  { "x": 18, "y": 1, "z": 92, "t": 1 },
-  { "x": 19, "y": 1, "z": 83, "t": 1 },
-  { "x": 20, "y": 1, "z": 70, "t": 1 },
-  { "x": 21, "y": 1, "z": 75, "t": 1 },
-  { "x": 22, "y": 1, "z": 35, "t": 1 },
-  { "x": 23, "y": 1, "z": 21, "t": 1 },
-  { "x": 24, "y": 1, "z": 45, "t": 1 },
-  { "x": 25, "y": 1, "z": 96, "t": 1 },
-  { "x": 26, "y": 1, "z": 82, "t": 1 },
-  { "x": 27, "y": 1, "z": 65, "t": 1 },
-  { "x": 28, "y": 1, "z": 78, "t": 1 }
+  { "x": 1, "y": 1, "z": 2, "t": 1 },
+  { "x": 2, "y": 1, "z": 3, "t": 1 },
+  { "x": 3, "y": 1, "z": 2, "t": 1 },
+  { "x": 4, "y": 1, "z": 3, "t": 1 },
+  { "x": 5, "y": 1, "z": 3, "t": 1 },
+  { "x": 6, "y": 1, "z": 3, "t": 1 },
+  { "x": 7, "y": 1, "z": 3, "t": 1 },
+  { "x": 8, "y": 1, "z": 3, "t": 1 },
+  { "x": 9, "y": 1, "z": 3, "t": 1 },
+  { "x": 10, "y": 1, "z": 3, "t": 1 },
+  { "x": 11, "y": 1, "z": 2, "t": 1 },
+  { "x": 12, "y": 1, "z": 2, "t": 1 },
+  { "x": 13, "y": 1, "z": 3, "t": 1 },
+  { "x": 14, "y": 1, "z": 3, "t": 1 },
+  { "x": 15, "y": 1, "z": 2, "t": 1 },
+  { "x": 16, "y": 1, "z": 3, "t": 1 },
+  { "x": 17, "y": 1, "z": 3, "t": 1 },
+  { "x": 18, "y": 1, "z": 3, "t": 1 },
+  { "x": 19, "y": 1, "z": 3, "t": 1 },
+  { "x": 20, "y": 1, "z": 3, "t": 1 },
+  { "x": 21, "y": 1, "z": 3, "t": 1 },
+  { "x": 22, "y": 1, "z": 1, "t": 1 },
+  { "x": 23, "y": 1, "z": 1, "t": 1 },
+  { "x": 24, "y": 1, "z": 3, "t": 1 },
+  { "x": 25, "y": 1, "z": 3, "t": 1 },
+  { "x": 26, "y": 1, "z": 3, "t": 1 },
+  { "x": 27, "y": 1, "z": 3, "t": 1 },
+  { "x": 28, "y": 1, "z": 3, "t": 1 }
 ],
 [
-  { "x": 1, "y": 2, "z": 73, "t": 2 },
-  { "x": 2, "y": 2, "z": 92, "t": 2 },
-  { "x": 3, "y": 2, "z": 41, "t": 2 },
-  { "x": 4, "y": 2, "z": 33, "t": 2 },
-  { "x": 5, "y": 2, "z": 63, "t": 2 },
-  { "x": 6, "y": 2, "z": 70, "t": 2 },
-  { "x": 7, "y": 2, "z": 75, "t": 2 },
-  { "x": 8, "y": 2, "z": 20, "t": 2 },
-  { "x": 9, "y": 2, "z": 27, "t": 2 },
-  { "x": 10, "y": 2, "z": 25, "t": 2 },
-  { "x": 11, "y": 2, "z": 12, "t": 2 },
-  { "x": 12, "y": 2, "z": 75, "t": 2 },
-  { "x": 13, "y": 2, "z": 60, "t": 2 },
-  { "x": 14, "y": 2, "z": 65, "t": 2 },
-  { "x": 15, "y": 2, "z": 84, "t": 2 },
-  { "x": 16, "y": 2, "z": 71, "t": 2 },
-  { "x": 17, "y": 2, "z": 94, "t": 2 },
-  { "x": 18, "y": 2, "z": 79, "t": 2 },
-  { "x": 19, "y": 2, "z": 53, "t": 2 },
-  { "x": 20, "y": 2, "z": 80, "t": 2 },
-  { "x": 21, "y": 2, "z": 85, "t": 2 },
-  { "x": 22, "y": 2, "z": 94, "t": 2 },
-  { "x": 23, "y": 2, "z": 63, "t": 2 },
-  { "x": 24, "y": 2, "z": 67, "t": 2 },
-  { "x": 25, "y": 2, "z": 86, "t": 2 },
-  { "x": 26, "y": 2, "z": 27, "t": 2 },
-  { "x": 27, "y": 2, "z": 39, "t": 2 },
-  { "x": 28, "y": 2, "z": 57, "t": 2 }
+  { "x": 1, "y": 2, "z": 3, "t": 2 },
+  { "x": 2, "y": 2, "z": 3, "t": 2 },
+  { "x": 3, "y": 2, "z": 1, "t": 2 },
+  { "x": 4, "y": 2, "z": 1, "t": 2 },
+  { "x": 5, "y": 2, "z": 2, "t": 2 },
+  { "x": 6, "y": 2, "z": 2, "t": 2 },
+  { "x": 7, "y": 2, "z": 3, "t": 2 },
+  { "x": 8, "y": 2, "z": 0, "t": 2 },
+  { "x": 9, "y": 2, "z": 0, "t": 2 },
+  { "x": 10, "y": 2, "z": 0, "t": 2 },
+  { "x": 11, "y": 2, "z": 0, "t": 2 },
+  { "x": 12, "y": 2, "z": 3, "t": 2 },
+  { "x": 13, "y": 2, "z": 2, "t": 2 },
+  { "x": 14, "y": 2, "z": 2, "t": 2 },
+  { "x": 15, "y": 2, "z": 3, "t": 2 },
+  { "x": 16, "y": 2, "z": 2, "t": 2 },
+  { "x": 17, "y": 2, "z": 3, "t": 2 },
+  { "x": 18, "y": 2, "z": 2, "t": 2 },
+  { "x": 19, "y": 2, "z": 1, "t": 2 },
+  { "x": 20, "y": 2, "z": 2, "t": 2 },
+  { "x": 21, "y": 2, "z": 2, "t": 2 },
+  { "x": 22, "y": 2, "z": 3, "t": 2 },
+  { "x": 23, "y": 2, "z": 2, "t": 2 },
+  { "x": 24, "y": 2, "z": 2, "t": 2 },
+  { "x": 25, "y": 2, "z": 3, "t": 2 },
+  { "x": 26, "y": 2, "z": 0, "t": 2 },
+  { "x": 27, "y": 2, "z": 1, "t": 2 },
+  { "x": 28, "y": 2, "z": 2, "t": 2 }
 ],
 [
-  { "x": 1, "y": 3, "z": 20, "t": 3 },
-  { "x": 2, "y": 3, "z": 53, "t": 3 },
-  { "x": 3, "y": 3, "z": 83, "t": 3 },
-  { "x": 4, "y": 3, "z": 11, "t": 3 },
-  { "x": 5, "y": 3, "z": 2, "t": 3 },
-  { "x": 6, "y": 3, "z": 30, "t": 3 },
-  { "x": 7, "y": 3, "z": 35, "t": 3 },
-  { "x": 8, "y": 3, "z": 71, "t": 3 },
-  { "x": 9, "y": 3, "z": 28, "t": 3 },
-  { "x": 10, "y": 3, "z": 84, "t": 3 },
-  { "x": 11, "y": 3, "z": 65, "t": 3 },
-  { "x": 12, "y": 3, "z": 3, "t": 3 },
-  { "x": 13, "y": 3, "z": 40, "t": 3 },
-  { "x": 14, "y": 3, "z": 45, "t": 3 },
-  { "x": 15, "y": 3, "z": 60, "t": 3 },
-  { "x": 16, "y": 3, "z": 49, "t": 3 },
-  { "x": 17, "y": 3, "z": 96, "t": 3 },
-  { "x": 18, "y": 3, "z": 46, "t": 3 },
-  { "x": 19, "y": 3, "z": 33, "t": 3 },
-  { "x": 20, "y": 3, "z": 70, "t": 3 },
-  { "x": 21, "y": 3, "z": 75, "t": 3 },
-  { "x": 22, "y": 3, "z": 28, "t": 3 },
-  { "x": 23, "y": 3, "z": 28, "t": 3 },
-  { "x": 24, "y": 3, "z": 46, "t": 3 },
-  { "x": 25, "y": 3, "z": 57, "t": 3 },
-  { "x": 26, "y": 3, "z": 66, "t": 3 },
-  { "x": 27, "y": 3, "z": 77, "t": 3 },
-  { "x": 28, "y": 3, "z": 92, "t": 3 }
+  { "x": 1, "y": 3, "z": 2, "t": 3 },
+  { "x": 2, "y": 3, "z": 3, "t": 3 },
+  { "x": 3, "y": 3, "z": 3, "t": 3 },
+  { "x": 4, "y": 3, "z": 1, "t": 3 },
+  { "x": 5, "y": 3, "z": 0, "t": 3 },
+  { "x": 6, "y": 3, "z": 1, "t": 3 },
+  { "x": 7, "y": 3, "z": 1, "t": 3 },
+  { "x": 8, "y": 3, "z": 3, "t": 3 },
+  { "x": 9, "y": 3, "z": 0, "t": 3 },
+  { "x": 10, "y": 3, "z": 3, "t": 3 },
+  { "x": 11, "y": 3, "z": 3, "t": 3 },
+  { "x": 12, "y": 3, "z": 0, "t": 3 },
+  { "x": 13, "y": 3, "z": 1, "t": 3 },
+  { "x": 14, "y": 3, "z": 1, "t": 3 },
+  { "x": 15, "y": 3, "z": 1, "t": 3 },
+  { "x": 16, "y": 3, "z": 1, "t": 3 },
+  { "x": 17, "y": 3, "z": 3, "t": 3 },
+  { "x": 18, "y": 3, "z": 1, "t": 3 },
+  { "x": 19, "y": 3, "z": 1, "t": 3 },
+  { "x": 20, "y": 3, "z": 3, "t": 3 },
+  { "x": 21, "y": 3, "z": 3, "t": 3 },
+  { "x": 22, "y": 3, "z": 0, "t": 3 },
+  { "x": 23, "y": 3, "z": 0, "t": 3 },
+  { "x": 24, "y": 3, "z": 1, "t": 3 },
+  { "x": 25, "y": 3, "z": 2, "t": 3 },
+  { "x": 26, "y": 3, "z": 2, "t": 3 },
+  { "x": 27, "y": 3, "z": 3, "t": 3 },
+  { "x": 28, "y": 3, "z": 3, "t": 3 }
 ],
 [
-  { "x": 1, "low": 0, "high": 113, "week": 1, "avg": 37, "highscore": 73, "topEarner": "Sofia" },
-  { "x": 2, "low": 0, "high": 190, "week": 1, "avg": 63, "highscore": 92, "topEarner": "Sofia" },
-  { "x": 3, "low": 0, "high": 136, "week": 1, "avg": 45, "highscore": 83, "topEarner": "Asmara" },
-  { "x": 4, "low": 0, "high": 81, "week": 1, "avg": 27, "highscore": 37, "topEarner": "Ulambaator" },
-  { "x": 5, "low": 0, "high": 107, "week": 1, "avg": 35, "highscore": 63, "topEarner": "Sofia" },
-  { "x": 6, "low": 0, "high": 120, "week": 1, "avg": 40, "highscore": 75, "topEarner": "Ulambaator" },
-  { "x": 7, "low": 0, "high": 125, "week": 1, "avg": 42, "highscore": 78, "topEarner": "Asmara" },
-  { "x": 8, "low": 0, "high": 148, "week": 2, "avg": 49, "highscore": 71, "topEarner": "Asmara" },
-  { "x": 9, "low": 0, "high": 141, "week": 2, "avg": 47, "highscore": 86, "topEarner": "Ulambaator" },
-  { "x": 10, "low": 0, "high": 201, "week": 2, "avg": 67, "highscore": 92, "topEarner": "Ulambaator" },
-  { "x": 11, "low": 0, "high": 126, "week": 2, "avg": 42, "highscore": 65, "topEarner": "Asmara" },
-  { "x": 12, "low": 0, "high": 120, "week": 2, "avg": 40, "highscore": 75, "topEarner": "Sofia" },
-  { "x": 13, "low": 0, "high": 130, "week": 2, "avg": 43, "highscore": 80, "topEarner": "Ulambaator" },
-  { "x": 14, "low": 0, "high": 135, "week": 2, "avg": 45, "highscore": 85, "topEarner": "Asmara" },
-  { "x": 15, "low": 0, "high": 192, "week": 3, "avg": 64, "highscore": 84, "topEarner": "Sofia" },
-  { "x": 16, "low": 0, "high": 217, "week": 3, "avg": 72, "highscore": 97, "topEarner": "Ulambaator" },
-  { "x": 17, "low": 0, "high": 277, "week": 3, "avg": 92, "highscore": 96, "topEarner": "Asmara" },
-  { "x": 18, "low": 0, "high": 217, "week": 3, "avg": 72, "highscore": 92, "topEarner": "Ulambaator" },
-  { "x": 19, "low": 0, "high": 169, "week": 3, "avg": 56, "highscore": 83, "topEarner": "Ulambaator" },
-  { "x": 20, "low": 0, "high": 170, "week": 3, "avg": 57, "highscore": 70, "topEarner": "Asmara" },
-  { "x": 21, "low": 0, "high": 175, "week": 3, "avg": 58, "highscore": 75, "topEarner": "Sofia" },
-  { "x": 22, "low": 0, "high": 157, "week": 4, "avg": 52, "highscore": 94, "topEarner": "Sofia" },
-  { "x": 23, "low": 0, "high": 112, "week": 4, "avg": 37, "highscore": 63, "topEarner": "Sofia" },
-  { "x": 24, "low": 0, "high": 158, "week": 4, "avg": 52, "highscore": 67, "topEarner": "Sofia" },
-  { "x": 25, "low": 0, "high": 239, "week": 4, "avg": 79, "highscore": 96, "topEarner": "Ulambaator" },
-  { "x": 26, "low": 0, "high": 175, "week": 4, "avg": 58, "highscore": 82, "topEarner": "Ulambaator" },
-  { "x": 27, "low": 0, "high": 124, "week": 5, "avg": 41, "highscore": 65, "topEarner": "Asmara" },
-  { "x": 28, "low": 0, "high": 187, "week": 5, "avg": 62, "highscore": 78, "topEarner": "Sofia" }
+  { "x": 1, "low": 0, "high": 130, "week": 1, "avg": 37, "highscore": 73, "topEarner": "Deep Sleep" },
+  { "x": 2, "low": 0, "high": 190, "week": 1, "avg": 63, "highscore": 92, "topEarner": "Deep Sleep" },
+  { "x": 3, "low": 0, "high": 136, "week": 1, "avg": 45, "highscore": 83, "topEarner": "Light Sleep" },
+  { "x": 4, "low": 0, "high": 81, "week": 1, "avg": 27, "highscore": 37, "topEarner": "REM" },
+  { "x": 5, "low": 0, "high": 107, "week": 1, "avg": 35, "highscore": 63, "topEarner": "Deep Sleep" },
+  { "x": 6, "low": 0, "high": 120, "week": 1, "avg": 40, "highscore": 75, "topEarner": "REM" },
+  { "x": 7, "low": 0, "high": 125, "week": 1, "avg": 42, "highscore": 78, "topEarner": "Light Sleep" },
+  { "x": 8, "low": 0, "high": 148, "week": 2, "avg": 49, "highscore": 71, "topEarner": "Light Sleep" },
+  { "x": 9, "low": 0, "high": 141, "week": 2, "avg": 47, "highscore": 86, "topEarner": "REM" },
+  { "x": 10, "low": 0, "high": 201, "week": 2, "avg": 67, "highscore": 92, "topEarner": "REM" },
+  { "x": 11, "low": 0, "high": 126, "week": 2, "avg": 42, "highscore": 65, "topEarner": "Light Sleep" },
+  { "x": 12, "low": 0, "high": 120, "week": 2, "avg": 40, "highscore": 75, "topEarner": "Deep Sleep" },
+  { "x": 13, "low": 0, "high": 130, "week": 2, "avg": 43, "highscore": 80, "topEarner": "REM" },
+  { "x": 14, "low": 0, "high": 135, "week": 2, "avg": 45, "highscore": 85, "topEarner": "Light Sleep" },
+  { "x": 15, "low": 0, "high": 192, "week": 3, "avg": 64, "highscore": 84, "topEarner": "Deep Sleep" },
+  { "x": 16, "low": 0, "high": 217, "week": 3, "avg": 72, "highscore": 97, "topEarner": "REM" },
+  { "x": 17, "low": 0, "high": 277, "week": 3, "avg": 92, "highscore": 96, "topEarner": "Light Sleep" },
+  { "x": 18, "low": 0, "high": 217, "week": 3, "avg": 72, "highscore": 92, "topEarner": "REM" },
+  { "x": 19, "low": 0, "high": 169, "week": 3, "avg": 56, "highscore": 83, "topEarner": "REM" },
+  { "x": 20, "low": 0, "high": 170, "week": 3, "avg": 57, "highscore": 70, "topEarner": "Light Sleep" },
+  { "x": 21, "low": 0, "high": 175, "week": 3, "avg": 58, "highscore": 75, "topEarner": "Deep Sleep" },
+  { "x": 22, "low": 0, "high": 157, "week": 4, "avg": 52, "highscore": 94, "topEarner": "Deep Sleep" },
+  { "x": 23, "low": 0, "high": 112, "week": 4, "avg": 37, "highscore": 63, "topEarner": "Deep Sleep" },
+  { "x": 24, "low": 0, "high": 158, "week": 4, "avg": 52, "highscore": 67, "topEarner": "Deep Sleep" },
+  { "x": 25, "low": 0, "high": 239, "week": 4, "avg": 79, "highscore": 96, "topEarner": "REM" },
+  { "x": 26, "low": 0, "high": 175, "week": 4, "avg": 58, "highscore": 82, "topEarner": "REM" },
+  { "x": 27, "low": 0, "high": 124, "week": 5, "avg": 41, "highscore": 65, "topEarner": "Light Sleep" },
+  { "x": 28, "low": 0, "high": 187, "week": 5, "avg": 62, "highscore": 78, "topEarner": "Deep Sleep" }
 ]
 ]`);
 
@@ -189,7 +189,7 @@ class HighchartsChart extends Component {
      'style="color:{point.color};">●</span> ' +
      str +
      "</span>";
-   teamNames = ["Ulambaator", "Sofia", "Asmara"];
+   teamNames = ["REM", "Deep Sleep", "Light Sleep"];
    teamColors = [
      colors[9 % colors.length].tweenTo(colors[0], 0.25),
      colors[9 % colors.length].tweenTo(colors[8 % colors.length], 0.65),
@@ -227,7 +227,7 @@ class HighchartsChart extends Component {
            "<b>{series.name}</b></span>",
          pointFormat:
            '<span class="team-points">' +
-           '<span class="team-salescount-header">Daily Sales:</span>' +
+           '<span class="team-salescount-header">Number of Hours:</span>' +
            "</br>" +
            '<span class="team-salescount">{point.z}</span>',
          footerFormat: "</div>",
@@ -245,33 +245,6 @@ class HighchartsChart extends Component {
          lineWidth: 2,
        },
      }));
-//    weekLabels = Array(4)
-//      .fill(0)
-//      .map((_value, index) => ({
-//        dataLabels: {
-//          format: "Week {x}",
-//          enabled: true,
-//          inside: true,
-//          style: {
-//            textOutline: undefined,
-//            fontSize: "0.7em",
-//            fontWeight: "700",
-//            textTransform: "uppercase",
-//            fontStyle: "normal",
-//            letterSpacing: "0.01em",
-//          },
-//          textPath: {
-//            enabled: true,
-//            attributes: {
-//              startOffset: index % 3 ? "75%" : index % 2 ? "22%" : "28%",
-//              dx: index % 2 ? "-2%" : "0%",
-//              dy: index % 3 ? "2.8%" : "3.3%",
-//            },
-//          },
-//        },
-//        x: index + 1,
-//        y: 1.5,
-//      }));
 weekLabels = Array(4)
   .fill(0)
   .map((_value, index) => ({
@@ -337,7 +310,7 @@ weekLabels = Array(4)
         text: "Advanced Polar Chart",
       },
       subtitle: {
-        text: "Sales Team<br>Performance",
+        text: "SLEEP TRACKER",
         useHTML: "true",
         align: "center",
         y: 35,
@@ -483,7 +456,7 @@ weekLabels = Array(4)
           gridLineWidth: 0,
           tickInterval: 100,
           min: 0,
-          max: 400,
+          max: 12,
           title: null,
           ...noLabelProp,
         },
@@ -700,17 +673,14 @@ weekLabels = Array(4)
               '<b style="color:{point.color};">Day {point.x}</b></span>',
             hideDelay: 0,
             pointFormat:
-              asColFieldStr("<b>Sales: </b><span>{point.high}</span>") +
-              asColFieldStr("<b>Average: </b><span>{point.avg}</span>") +
+              asColFieldStr("<b>Total Sleep: </b><span>{point.high}</span>") +
               asColFieldStr(
-                "<b>Highscore: </b><span>{point.highscore}</span>"
+                "<b>Highest Amount in Sleep: </b><span>{point.highscore}</span>"
               ) +
               asColFieldStr(
-                "<b>Top earner: </b><span>{point.topEarner}</span>"
+                "<b>HIghest Sleep Type: </b><span>{point.topEarner}</span>"
               ),
-            footerFormat:
-              '<i class="col-display-footer center">' +
-              "Week {point.week}</i></span></span>",
+            
           },
         },
       ],
@@ -721,7 +691,7 @@ weekLabels = Array(4)
 
   render() {
     return (
-      <div>
+      <div style={{marginTop:"200px"}}>
         <figure className="highcharts-figure">
           <div id="container"></div>
           <p className="highcharts-description">

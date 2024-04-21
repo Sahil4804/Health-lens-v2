@@ -28,9 +28,9 @@ const combineData = (frienddata, yourselfgenerate) => {
 
 const allData = combineData(frienddata, yourselfgenerate);
 
-const Race2 = () => {
+const Race2 = (props) => {
   const chartRef = useRef(null);
-
+  console.log(props.date_used);
   useEffect(() => {
     let root = am5.Root.new(chartRef.current);
 

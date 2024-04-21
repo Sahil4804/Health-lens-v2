@@ -24,9 +24,9 @@ for (let hour = 0; hour < 24; hour++) {
   data1.push(yourselfgenerate[hourString]['Yourself']);
 }
 
-const Linechart = () => {
+const Linechart = (props) => {
   const chartRef = useRef(null);
-
+  console.log(props.date_used);
   useEffect(() => {
     return () => {
       // Destroy the chart instance when the component unmounts
