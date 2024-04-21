@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import highchartsExporting from 'highcharts/modules/exporting';
@@ -82,70 +82,7 @@ highchartsAccessibility(Highcharts);
     };
 })(Highcharts);
 
-let options = {
-    chart: {
-        type: 'pie'
-    },
-    title: {
-        text: 'Departamental Strength of the Company',
-        align: 'left'
-    },
-    subtitle: {
-        text: 'Custom animation of pie series',
-        align: 'left'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            borderWidth: 2,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b><br>{point.percentage}%',
-                distance: 20
-            }
-        }
-    },
-    series: [
-        {
-            enableMouseTracking: false,
-            animation: {
-                duration: 2000
-            },
-            colorByPoint: true,
-            data: [
-                {
-                    name: 'Carbohydrates',
-                    y: 21.3
-                },
-                {
-                    name: 'Protein',
-                    y: 18.7
-                },
-                {
-                    name: 'Fats',
-                    y: 20.2
-                },
-                {
-                    name: 'Alcohol',
-                    y: 14.2
-                },
-                {
-                    name: '',
-                    y: 25.6
-                }
-            ]
-        }
-    ]
-};
+
 function generateRandomNumbers() {
     let numbers = [];
     let sum = 0;
@@ -166,27 +103,89 @@ function generateRandomNumbers() {
 }
 
 const PieChart = (props) => {
+    const [options, setOptions] = useState({
+        chart: {
+            type: 'pie'
+        },
+        title: {
+            text: 'Departamental Strength of the Company',
+            align: 'left'
+        },
+        subtitle: {
+            text: 'Custom animation of pie series',
+            align: 'left'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                borderWidth: 2,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b><br>{point.percentage}%',
+                    distance: 20
+                }
+            }
+        },
+        series: [
+            {
+                enableMouseTracking: false,
+                animation: {
+                    duration: 2000
+                },
+                colorByPoint: true,
+                data: [
+                    {
+                        name: 'Carbohydrates',
+                        y: 21.3
+                    },
+                    {
+                        name: 'Protein',
+                        y: 18.7
+                    },
+                    {
+                        name: 'Fats',
+                        y: 20.2
+                    },
+                    {
+                        name: 'Alcohol',
+                        y: 14.2
+                    },
+                    {
+                        name: '',
+                        y: 25.6
+                    }
+                ]
+            }
+        ]
+    });
 
-    const [goalhave, setGoalhave] = React.useState(props.goal);
     useEffect(() => {
-        Highcharts.setOptions({
-            colors: ['#FFD700', '#C0C0C0', '#CD7F32', '#009ACD', '#ffffff']
-        });
-        console.log(props.achieved, props.goal);
-        setGoalhave(props.goal);
-        const li1 = [0.4,0.3,0.15,0.15];
-        let tot_sum=0;
-        options.series[0].data[0].y = (props.achieved * li1[0] * 8);
-        tot_sum += options.series[0].data[0].y;
-        options.series[0].data[1].y = (props.achieved * li1[1] * 8);
-        tot_sum += options.series[0].data[1].y;
-        options.series[0].data[2].y = (props.achieved * li1[2] * 8);
-        tot_sum += options.series[0].data[2].y;
-        options.series[0].data[3].y = (props.goal * li1[3] * 8);
-        tot_sum += options.series[0].data[3].y;
-        options.series[0].data[4].y = props.goal-props.achieved;   
+        let updatedOptions = { ...options }; // Create a copy of the options object
+        // Update the options object with new data based on props
+        const li1 = [0.4, 0.3, 0.15, 0.15];
+        let tot_sum = 0;
+        updatedOptions.series[0].data[0].y = props.achieved * li1[0] * 8;
+        tot_sum += updatedOptions.series[0].data[0].y;
+        updatedOptions.series[0].data[1].y = props.achieved * li1[1] * 8;
+        tot_sum += updatedOptions.series[0].data[1].y;
+        updatedOptions.series[0].data[2].y = props.achieved * li1[2] * 8;
+        tot_sum += updatedOptions.series[0].data[2].y;
+        updatedOptions.series[0].data[3].y = props.goal * li1[3] * 8;
+        tot_sum += updatedOptions.series[0].data[3].y;
+        updatedOptions.series[0].data[4].y = props.goal - props.achieved;
+        console.log("Updated Options:", updatedOptions);
+        setOptions(updatedOptions); // Set the new options
     }, [props.achieved, props.goal]);
-    
+
     return (
         <div>
             {props.achieved} -- {props.goal}
@@ -195,4 +194,7 @@ const PieChart = (props) => {
     );
 };
 
+
 export default PieChart;
+
+

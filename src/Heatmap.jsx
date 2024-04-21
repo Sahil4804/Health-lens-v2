@@ -94,7 +94,7 @@ function Heatmap() {
       />
       {clickedDate && (
         <div style={{ position: "absolute", backgroundColor: "white", padding: "8px", border: "1px solid gray", left: '60vw' ,width:'20vw'}}>
-          <PieChart achieved={data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0} goal={ goal} />
+           <PieChart key={`${goal}-${data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count}`} achieved={data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0} goal={ goal} />
           <p>Date: {clickedDate.toString().slice(0, 15)}</p>
           <p>Submissions: {data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0}</p>
           <p>Formatted Date: {clickedDate.toLocaleDateString()}</p>

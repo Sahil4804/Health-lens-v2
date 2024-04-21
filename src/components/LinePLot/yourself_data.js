@@ -1,7 +1,7 @@
 function yourdata() {
     const data = {};
     // Loop through each hour of the day
-    for (let hour = 0; hour < 24; hour++) {
+    for (let hour = 0; hour <= 24; hour++) {
         const hourString = hour.toString().padStart(2, '0') + ':00';
         if (hour == 0) {
             data['00:00'] = {
