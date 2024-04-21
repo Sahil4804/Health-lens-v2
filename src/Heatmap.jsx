@@ -72,6 +72,7 @@ function Heatmap() {
         position: "absolute",
         top: "20vh",
         marginLeft: "10vw",
+        
       }}
     >
       <CalendarHeatmap
