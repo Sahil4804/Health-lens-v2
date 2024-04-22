@@ -27,16 +27,16 @@ const Navbar = () => {
       >
         {/* Creating a div element with flex display, aligning items center, and justifying content space-between */}
         <img src="./logo_hl.png" alt="" style={{ height: "10vh" }} />
-        <a href="https://youtu.be/qf0cI6SM_B8">
+        <a href="https://www.youtube.com/watch?v=mEXxfgKfdtg">
           <img src="./youtube_icon.png" alt="" style={{ height: "5vh" }} />
         </a>
-        <a href="https://github.com/Sahil4804/Health-lens">
+        <a href="https://github.com/Sahil4804/Health-lens-v2">
           <img src="./githublink.png" alt="" style={{ height: "5vh" }} />
         </a>
-        <a href="https://docs.google.com/document/d/109PFT_fa7O7mKr4Y5bbVGE2DehV-CSNkVXjM_dLgx6Y/edit?usp=sharing">
+        <a href="https://iiitaphyd-my.sharepoint.com/:b:/g/personal/archit_pethani_students_iiit_ac_in/Eeabbpa_A_1AuLqnEtPdcZoBurlaWeNJlj-i34mUh8865Q?e=ZsdVx0">
           <img src="./docs_icon.png" alt="" style={{ height: "5vh" }} />
         </a>
-        <Togglebutton /> {/* Rendering the Togglebutton component */}
+        <Togglebutton />
       </div>
     </nav>
   );
