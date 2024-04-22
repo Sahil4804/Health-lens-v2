@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import data_30 from './yourself_data.js';
+import '../../App.css'
 // import { data11, data12 } from './p1_data.js';
 
 
@@ -16,9 +17,6 @@ HighchartsExporting(Highcharts);
 HighchartsExportData(Highcharts);
 HighchartsAccessibility(Highcharts);
 HighchartsMore(Highcharts);
-
-
-
 
 
 const Linechart = (props) => {
@@ -91,19 +89,21 @@ const Linechart = (props) => {
 
   return (
     // <HighchartsReact highcharts={Highcharts} options={config} ref={chartRef} />
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh', /* Optional: makes the container full height of the viewport */
-    }}>
+    <div className='box'>
       <div style={{
-        border: '1px solid #ccc',
-        width: '600px',
-        padding: '40px',
-        borderRadius: '5px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '80vh', /* Optional: makes the container full height of the viewport */
       }}>
-        <HighchartsReact highcharts={Highcharts} options={config} ref={chartRef} />
+        <div style={{
+          border: '1px solid #ccc',
+          width: '600px',
+          padding: '40px',
+          borderRadius: '5px',
+        }}>
+          <HighchartsReact highcharts={Highcharts} options={config} ref={chartRef} />
+        </div>
       </div>
     </div>
   );

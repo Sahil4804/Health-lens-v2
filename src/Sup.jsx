@@ -51,10 +51,10 @@ function Sup({ option }) {
       </div>
         {/* <StepCountsGraph /> */}
 
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative',top:'20vh' }}>
         <Heatmap />
       </div>
-      <div style={{position:'relative',top:'120vh'}}>
+      <div style={{position:'relative',top:'160vh'}}>
         <HeatmapChart/>
       </div>
     </ThemeProvider>

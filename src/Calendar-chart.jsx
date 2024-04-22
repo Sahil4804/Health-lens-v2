@@ -210,11 +210,7 @@ const options = {
   },
   title: {
     text: "Day Stepcount of Person in July",
-    align: "left",
-  },
-  subtitle: {
-    text: "Stepcount variation at day through July",
-    align: "left",
+    align: "center",
   },
   accessibility: {
     landmarkVerbosity: "one",
@@ -264,10 +260,10 @@ const options = {
   colorAxis: {
     min: 0,
     stops: [
-      [0.2, "lightblue"],
-      [0.4, "#CBDFC8"],
-      [0.6, "#F3E99E"],
-      [0.9, "#F9A05C"],
+      [0.2, "#AED6F1"],
+      [0.4, "#85C1E9"],
+      [0.6, "#58D68D"],
+      [0.9, "#2874A6"],
     ],
     labels: {
       format: "{value} steps",
@@ -337,11 +333,7 @@ const HeatmapChart = () => {
           },
           title: {
             text: "Day Stepcount of Person July 2023",
-            align: "left",
-          },
-          subtitle: {
-            text: "Stepcount variation at day through July",
-            align: "left",
+            align: "center",
           },
           accessibility: {
             landmarkVerbosity: "one",
@@ -391,10 +383,10 @@ const HeatmapChart = () => {
           colorAxis: {
             min: 0,
             stops: [
-              [0.2, "lightblue"],
-              [0.4, "#CBDFC8"],
-              [0.6, "#F3E99E"],
-              [0.9, "#F9A05C"],
+              [0.2, "#AED6F1"],
+              [0.4, "#85C1E9"],
+              [0.6, "#3498DB"],
+              [0.9, "#2874A6"],
             ],
             labels: {
               format: "{value} steps",

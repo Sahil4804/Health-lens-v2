@@ -10,153 +10,7 @@ import MyResponsiveAreaBump from '../../Rank-2.jsx';
 
 // console.log(frienddata);
 // console.log(yourselfgenerate);
-const data22 = [
-  {
-      "id": "JavaScript",
-      "data": [
-          {
-              "x": 2000,
-              "y": 24
-          },
-          {
-              "x": 2001,
-              "y": 21
-          },
-          {
-              "x": 2002,
-              "y": 28
-          },
-          {
-              "x": 2003,
-              "y": 25
-          },
-          {
-              "x": 2004,
-              "y": 20
-          },
-          {
-              "x": 2005,
-              "y": 14
-          }
-      ]
-  },
-  {
-      "id": "ReasonML",
-      "data": [
-          {
-              "x": 2000,
-              "y": 15
-          },
-          {
-              "x": 2001,
-              "y": 18
-          },
-          {
-              "x": 2002,
-              "y": 14
-          },
-          {
-              "x": 2003,
-              "y": 29
-          },
-          {
-              "x": 2004,
-              "y": 20
-          },
-          {
-              "x": 2005,
-              "y": 29
-          }
-      ]
-  },
-  {
-      "id": "TypeScript",
-      "data": [
-          {
-              "x": 2000,
-              "y": 28
-          },
-          {
-              "x": 2001,
-              "y": 23
-          },
-          {
-              "x": 2002,
-              "y": 19
-          },
-          {
-              "x": 2003,
-              "y": 11
-          },
-          {
-              "x": 2004,
-              "y": 28
-          },
-          {
-              "x": 2005,
-              "y": 20
-          }
-      ]
-  },
-  {
-      "id": "Elm",
-      "data": [
-          {
-              "x": 2000,
-              "y": 17
-          },
-          {
-              "x": 2001,
-              "y": 27
-          },
-          {
-              "x": 2002,
-              "y": 24
-          },
-          {
-              "x": 2003,
-              "y": 14
-          },
-          {
-              "x": 2004,
-              "y": 10
-          },
-          {
-              "x": 2005,
-              "y": 30
-          }
-      ]
-  },
-  {
-      "id": "CoffeeScript",
-      "data": [
-          {
-              "x": 2000,
-              "y": 11
-          },
-          {
-              "x": 2001,
-              "y": 21
-          },
-          {
-              "x": 2002,
-              "y": 19
-          },
-          {
-              "x": 2003,
-              "y": 23
-          },
-          {
-              "x": 2004,
-              "y": 14
-          },
-          {
-              "x": 2005,
-              "y": 14
-          }
-      ]
-  }
-];
+
 function processData(data1) {
   var sendback = [];
   var allids = ['Yourself', 'Friend 1', 'Friend 2', 'Friend 3', 'Friend 4', 'Friend 5', 'Friend 6'];
@@ -430,11 +284,13 @@ const Race2 = (props) => {
 
   //   return <div ref={chartRef} style={{ width: '600px', height: '800px' }} />;
   return (
+    <>
+    
     <div style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100vh', /* Optional: makes the container full height of the viewport */
+      height: '80vh', /* Optional: makes the container full height of the viewport */
     }}>
       <div style={{
         border: '1px solid #ccc',
@@ -442,8 +298,17 @@ const Race2 = (props) => {
         height: '600px'
       }} ref={chartRef}></div>
 
-      <MyResponsiveAreaBump data={newdata}/>
     </div>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh', /* Optional: makes the container full height of the viewport */
+    }}>
+
+<MyResponsiveAreaBump data={newdata}/>
+    </div>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './card_all.css'; // Import your CSS file
+import heartpulse from './heartpulse.jpg';
 
 const Card = ({ dataImage,name }) => {
   const [width, setWidth] = useState(0);
@@ -50,9 +51,19 @@ const Card = ({ dataImage,name }) => {
 };
 
 const Cards_return = () => {
+    const otherImageStyle = {
+        width: '500px', // Adjust width and height as needed
+        height: '500px',
+        backgroundImage: `url(${heartpulse})`, // Use the imported introImage variable
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        marginTop: '20px', // Adjust margin as needed
+        borderRadius: '50%', // Make the image round
+        transition: 'transform 0.3s ease-in-out', // Add transition for animation
+    };
   return (
     <div id="app" className="container">
-      <Card dataImage="https://images.unsplash.com/photo-1479660656269-197ebb83b540?dpr=2&auto=compress,format&fit=crop&w=1199&h=798&q=80&cs=tinysrgb&crop=" name="Heart Rate" />
+      <Card dataImage={heartpulse} name="Heart Rate" />
       <Card dataImage="https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=" name="Step Count"/>
       <Card dataImage="https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=" name="Sleep" />
       <Card dataImage="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=" name="Calories"/>

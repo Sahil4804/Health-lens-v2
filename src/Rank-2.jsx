@@ -158,7 +158,7 @@ const MyResponsiveAreaBump = ({ data }) => (
 
     <ResponsiveAreaBump
         data={data}
-        margin={{ top: 40, right: 100, bottom: 40, left: 100 }}
+        margin={{ top: 40, right: 200, bottom: 40, left: 200 }}
         spacing={8}
         blendMode="multiply"
         defs={[

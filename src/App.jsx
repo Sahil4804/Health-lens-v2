@@ -71,9 +71,34 @@ const App = ({ isloading, changer }) => {
       </div>
     )
   }
+
+  const heading = {
+    textAlign: "center",
+    color: themeMode === "light" ? "#333333" : "#ffffff",
+  };
+
+  const containerStyle1 = {
+    display: 'flex',
+    alignItems: 'center', // Center items vertically
+    justifyContent: 'center', // Center items horizontally
+};
+
+const textStyle1 = {
+  flex: '1', // Allow text to grow and take up remaining space
+  textAlign: 'center',
+  padding: '0 20px', // Add padding for spacing
+  transition: 'transform 0.3s ease-in-out', // Add transition for animation
+};
+
+const heading1 = {
+  fontSize: '40px',
+  fontWeight: 'bold',
+  fontFamily: 'Arial, sans-serif',
+  color: '#1ABC9C',
+};
+  
   return (
     <div style={{ width: "50px" }} >
-
       {/* <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}> */}
       {data && (
         <div
@@ -88,6 +113,18 @@ const App = ({ isloading, changer }) => {
   
           </div> */}
           <div className="box">
+          <div style={containerStyle1}>
+                <div style={textStyle1}>
+                    <h1 style={heading1}>Heart Rate Tracker</h1>
+                    <br>
+                    </br>
+                    <p>
+                        This Chart shows the heart rate of the user in real time.
+                    </p>
+                </div>
+            </div>
+            <br>
+            </br>
             <Provider>
               <LineBarChart
                 data={data}
