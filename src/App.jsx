@@ -66,7 +66,7 @@ const App = ({ isloading, changer }) => {
   const { themeMode } = useTheme();
   if (isloading) {
     return (
-      <div style={{height:"100vh", width:"100vw"}}>
+      <div style={{height:"100vh", width:"100vw" , position:"relative"}}>
         <div className="loader"></div>
       </div>
     )
@@ -93,20 +93,20 @@ const textStyle1 = {
 const heading1 = {
   fontSize: '40px',
   fontWeight: 'bold',
-  fontFamily: 'Arial, sans-serif',
+ 
   color: '#1ABC9C',
 };
 
 const text1 = {
   fontSize: '20px',
   fontWeight: 'bold',
-  fontFamily: 'Arial, sans-serif',
+
 };
 
 const text2 = {
   fontSize: '20px',
   fontWeight: 'bold',
-  fontFamily: 'Arial, sans-serif',
+  
 };
   
   return (
@@ -130,16 +130,12 @@ const text2 = {
                     <h1 style={heading1}>Heart Rate Tracker</h1>
                     <br>
                     </br>
-                    <p style={text1}>
+                    <p style={{fontWeight:'bold',fontSize:'20px'}}>
                         This Chart shows the heart rate of the user in real time.
+                        dashed line is recommended heart rate and solid line is recommended heart rate
+                        intensity of the heart rate is shown by the color of the line
                     </p>
-                    <p style={text2}>
-                        dashed line is recommended heart rate
-                    </p>
-                    <p style={text1}>
-                        solid line is recommended heart rate
-                    </p>
-                </div>
+                  </div>
             </div>
             <br>
             </br>

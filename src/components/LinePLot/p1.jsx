@@ -41,9 +41,12 @@ const Linechart = (props) => {
       type: 'line'
     },
     title: {
-      text: undefined
+      text: ''
     },
     xAxis: {
+      title: {
+        text: 'Time of Day',
+      },
       labels: {
         style: {
           fontSize: '20px' // Adjust the font size as needed
@@ -60,7 +63,7 @@ const Linechart = (props) => {
       max: 21000.00,
       tickAmount: 10,
       title: {
-        text: undefined,
+        text: 'Number of Steps',
       },
       labels: {
         style: {
@@ -85,6 +88,12 @@ const Linechart = (props) => {
     }]
   };
 
+  const text1 = {
+    fontSize: '15px',
+    fontWeight: 'bold',
+    fontFamily: 'Arial, sans-serif',
+    marginBottom: '20px',
+  };
 
 
   return (
@@ -95,7 +104,9 @@ const Linechart = (props) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '80vh', /* Optional: makes the container full height of the viewport */
+        position:'relative',
+        left: '8vw',
+        height: '100vh', /* Optional: makes the container full height of the viewport */
       }}>
         <div style={{
           border: '1px solid #ccc',
@@ -103,6 +114,10 @@ const Linechart = (props) => {
           padding: '40px',
           borderRadius: '5px',
         }}>
+          <div style={{ textAlign: 'center', fontSize: '30px', marginBottom: '20px' }}>Step Analysis over 24hr</div>
+          <p style={text1}> 
+            The following graph shows the number of steps taken by yourself and the average number of steps taken by you in the past days as you over a 24 hour period.
+          </p>
           <HighchartsReact highcharts={Highcharts} options={config} ref={chartRef} />
         </div>
       </div>

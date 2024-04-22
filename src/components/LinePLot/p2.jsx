@@ -285,18 +285,28 @@ const Race2 = (props) => {
   //   return <div ref={chartRef} style={{ width: '600px', height: '800px' }} />;
   return (
     <>
-    
+    <p>
+          <div style={{ textAlign: 'center', fontSize: '30px', marginBottom: '20px' }}>Analysis of steps With your friends over 24hr</div>
+          <p style={{ fontSize: '15px', textAlign: 'center', fontWeight: 'bold',marginBottom: '10px' , fontFamily: 'Arial, sans-serif' }}>
+            The following graph shows the number of steps taken by yourself and the average number of steps taken by you in the past days as you over a 24 hour period.
+          </p>
+        </p>
     <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '80vh', /* Optional: makes the container full height of the viewport */
-    }}>
-      <div style={{
-        border: '1px solid #ccc',
-        width: '800px',
-        height: '600px'
-      }} ref={chartRef}></div>
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '80vh', /* Optional: makes the container full height of the viewport */
+      }}>
+        <div style={{
+          border: '2px solid #ccc',
+          width: '800px',
+          height: '600px',
+          padding: '0px',
+          borderRadius: '5px',
+        }}
+       ref={chartRef}>
+        
+       </div>
 
     </div>
     <div style={{

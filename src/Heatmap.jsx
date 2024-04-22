@@ -73,15 +73,17 @@ function Heatmap() {
   ];
   return (
     // <div className="wrappercf">
-    <div className="box">
+    <div className="box" >
       <div
         style={{
           width: "80vw",
           position: "relative",
-          top: "20vh",
+          top: "10vh",
           marginLeft: "10vw",
         }}
+
       >
+        <div style={{fontSize:'2vw',marginLeft:'35vw',fontFamily:'Poppins'}}>Calorie Tracker</div>
         <CalendarHeatmap
           startDate={shiftDate(today, -365)}
           endDate={today}
@@ -162,7 +164,7 @@ function Heatmap() {
               border: "1px solid gray",
               left: "20vw",
               width: "40vw",
-              top: "7vw",
+              top: "10vw",
             }}
           >
             <PieChart
