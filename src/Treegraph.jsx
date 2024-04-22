@@ -12,7 +12,7 @@ exporting(Highcharts);
 accessibility(Highcharts);
 const data = [
     {
-        color:'red',
+        color:'gray',
         id: '0.0',
         parent: '',
         name: 'Calories'
