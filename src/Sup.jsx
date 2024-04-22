@@ -14,6 +14,7 @@ import MyResponsiveAreaBump from './Rank-2.jsx';
 import Introduction from './components/Introduction/Intro_main';
 import Cards_return from './components/Cards/card_all';
 import HighchartsChart from "./components/Sleeptrack.jsx";
+import TreegraphComponent from './Treegraph.jsx';
 function Sup({ option }) {
   const [themeMode, setThemeMode] = useState('light');
   const [isloading, setIsloading] = useState(true);
@@ -38,7 +39,7 @@ function Sup({ option }) {
       
       <div >
         <Navbar /> 
-        <div style={{position:'relative',top:'15vh'}}>
+        <div>
            <Introduction />
          </div>
 
@@ -55,6 +56,7 @@ function Sup({ option }) {
       <div style={{ position: 'relative',top:'20vh' }}>
         {/* <Cards_return /> */}
         < Heatmap />
+        <TreegraphComponent />
       </div>
       <div style={{position:'relative',top:'40vh'}}>
         <HeatmapChart/>
