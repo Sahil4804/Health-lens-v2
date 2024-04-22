@@ -44,11 +44,14 @@ const data = [
 const TreegraphComponent = () => {
     const options = {
         title: {
-            text: 'Calories',
+            text: 'Calories Description',
             style: {
-                color: 'blackd',
+                color: '#F2613F',
                 fontSize: '24px',
-
+                fontFamily: 'Poppins',
+                position:'relative',
+                marginLeft:'100vw',
+                marginTop:'10vh'
             }
         },
         series: [
@@ -66,7 +69,7 @@ const TreegraphComponent = () => {
                 dataLabels: {
                     pointFormat: '{point.name}',
                     style: {
-                        fontFamily: 'Verdana, sans-serif', // Font family for data labels
+                        fontFamily: 'Poppins', // Font family for data labels
                         fontSize: '12px', // Font size for data labels
                         color: 'white', // Color for data labels
                         textOutline: 'none',    
@@ -107,7 +110,7 @@ const TreegraphComponent = () => {
             <HighchartsReact
                 highcharts={Highcharts}
                 options={options}
-                containerProps={{ style: { maxWidth: '800px', minWidth: '360px', margin: '0 auto', height: '600px' } }}
+                containerProps={{ style: { maxWidth: '800px', minWidth: '360px', margin: '0 0px 0px 300px', height: '400px',marginTop:'10vh',marginBottom:'10vw' } }}
             />
         </div>
     );

@@ -90,8 +90,8 @@ const Linechart = (props) => {
 
   const text1 = {
     fontSize: '15px',
-    fontWeight: 'bold',
-    fontFamily: 'Arial, sans-serif',
+    
+    fontFamily: 'Poppins, sans-serif',
     marginBottom: '20px',
   };
 
@@ -114,7 +114,7 @@ const Linechart = (props) => {
           padding: '40px',
           borderRadius: '5px',
         }}>
-          <div style={{ textAlign: 'center', fontSize: '30px', marginBottom: '20px' }}>Step Analysis over 24hr</div>
+          <div style={{ textAlign: 'center', fontSize: '30px', marginBottom: '20px',color:'#F2613F'}}>Step Analysis over 24hr</div>
           <p style={text1}> 
             The following graph shows the number of steps taken by yourself and the average number of steps taken by you in the past days as you over a 24 hour period.
           </p>

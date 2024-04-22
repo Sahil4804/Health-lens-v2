@@ -43,7 +43,7 @@ function Sup({ option }) {
            <Introduction />
          </div>
 
-         <div style={{position:'relative',top:'15vh'}}>
+         <div style={{position:'relative',top:'15vh',fontFamily:'Poppins'}}>
             <Cards_return />
          </div>
         
@@ -53,12 +53,12 @@ function Sup({ option }) {
       </div>
         {/* <StepCountsGraph /> */}
 
-      <div style={{ position: 'relative',top:'20vh' }}>
+      <div style={{ position: 'relative',top:'20vh',fontFamily:'Poppins' }}>
         {/* <Cards_return /> */}
         < Heatmap />
-        <TreegraphComponent />
+        
       </div>
-      <div style={{position:'relative',top:'40vh'}}>
+      <div style={{position:'relative',top:'40vh',fontFamily:'Poppins'}}>
         <HeatmapChart/>
       </div>
         <div style={{position:'relative',top:'60vh'}}>

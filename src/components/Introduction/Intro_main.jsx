@@ -20,18 +20,20 @@ const Introduction = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         textAlign: 'center',
-        fontSize: '20px',
+        fontSize: '15px',
         fontWeight: 'bold',
         color: 'black',
         padding: '50px', // Adjust padding as needed
+        fontFamily:'Poppins'
     };
 
     const heading = {
         fontSize: '40px',
         fontWeight: 'bold',
         fontFamily: 'Arial, sans-serif',
-        color: '#1ABC9C',
-        marginLeft: '-250px', // Add margin as needed
+        color:'#F2613F',
+        marginLeft: '-100px', // Add margin as needed
+        marginBottom:'10px',
     };
 
     const otherImageStyle = {
@@ -61,6 +63,7 @@ const Introduction = () => {
             <div style={containerStyle}>
                 <div style={textStyle}>
                     <h1 style={heading}>Personal Health Tracker</h1>
+                    <hr />
                     <br>
                     </br>
                     

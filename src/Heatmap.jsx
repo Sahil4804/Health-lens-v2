@@ -2,11 +2,12 @@ import React from "react";
 import "./App.css";
 import CalendarHeatmap from "react-calendar-heatmap";
 import { heatmapdata } from "./submission_calendar_data";
-import { DatePicker, Space } from "antd";
+import { DatePicker, Space, Tree } from "antd";
 const { RangePicker } = DatePicker;
 import { useState } from "react";
 import "./submission_calendar.css";
 import PieChart from "./Calorie";
+import TreegraphComponent from "./Treegraph";
 const today = new Date();
 const map_month_to_number = {
   Jan: 0,
@@ -83,7 +84,7 @@ function Heatmap() {
         }}
 
       >
-        <div style={{fontSize:'2vw',marginLeft:'35vw',fontFamily:'Poppins'}}>Calorie Tracker</div>
+        <div style={{fontSize:'2vw',marginLeft:'35vw',fontFamily:'Poppins',color:'#F2613F',fontWeight:'bold'}}>Calories Tracker</div>
         <CalendarHeatmap
           startDate={shiftDate(today, -365)}
           endDate={today}
@@ -204,6 +205,10 @@ function Heatmap() {
           </div>
         )}
       </div>
+      <div style={{position:'relative',top:'30vh'}}>
+<TreegraphComponent/>
+      </div>
+      
     </div>
   );
 }

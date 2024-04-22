@@ -1,5 +1,5 @@
 import React from 'react';
-import Highcharts from 'highcharts';
+import Highcharts, { color } from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import treemap from 'highcharts/modules/treemap';
 import treegraph from 'highcharts/modules/treegraph';
@@ -14,28 +14,29 @@ const data = [
     {
         id: '0.0',
         parent: '',
-        name: 'Calories'
+        name: 'Sleep',
+        color:'gray'
     },
     {
         id: '1.3',
         parent: '0.0',
-        name: 'Carbohydrates'
+        name: 'REM',
+        color:'#79dae9'
     },
     {
         id: '1.1',
         parent: '0.0',
-        name: 'Protein'
+        name: 'Deep Sleep',
+        color:'#d9c795'
     },
     {
         id: '1.2',
         parent: '0.0',
-        name: 'Alcohol'
+        name: 'Light',
+        color:'#F2613F'
+        
     },
-    {
-        id: '1.4',
-        parent: '0.0',
-        name: 'Fats'
-    },
+
    
 
 ];
@@ -46,9 +47,11 @@ const TreegraphComponent2 = () => {
         title: {
             text: 'Calories',
             style: {
-                color: 'blackd',
-                fontSize: '24px',
-
+                color: '#F2613F',
+                fontSize: '2vw',
+                fontWeight: 'bold',
+                fontFamily: 'Poppins',
+            
             }
         },
         series: [
@@ -66,7 +69,7 @@ const TreegraphComponent2 = () => {
                 dataLabels: {
                     pointFormat: '{point.name}',
                     style: {
-                        fontFamily: 'Verdana, sans-serif', // Font family for data labels
+                        fontFamily: 'Poppins, sans-serif', // Font family for data labels
                         fontSize: '12px', // Font size for data labels
                         color: 'white', // Color for data labels
                         textOutline: 'none',    
@@ -75,6 +78,7 @@ const TreegraphComponent2 = () => {
                 },
                 levels: [
                     {
+                        color:'violet',
                         level: 1,
                         levelIsConstant: false,
                     },
@@ -93,6 +97,7 @@ const TreegraphComponent2 = () => {
                     {
                         level: 4,
                         colorVariation: {
+                        
                             key: 'brightness',
                             to: 0.5,
                         },
@@ -107,7 +112,7 @@ const TreegraphComponent2 = () => {
             <HighchartsReact
                 highcharts={Highcharts}
                 options={options}
-                containerProps={{ style: { maxWidth: '800px', minWidth: '360px', margin: '0 auto', height: '600px' } }}
+                containerProps={{ style: { maxWidth: '800px', minWidth: '360px', margin: '0 auto', height: '400px' } }}
             />
         </div>
     );

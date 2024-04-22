@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react';
-import Highcharts from 'highcharts';
+import Highcharts, { color } from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import highchartsExporting from 'highcharts/modules/exporting';
 import highchartsExportData from 'highcharts/modules/export-data';
@@ -109,7 +109,13 @@ const PieChart = (props) => {
         },
         title: {
             text: 'Calories',
-            align: 'left'
+            align: 'left',
+            style: {
+                color: '#F2613F',
+                fontSize: '24px',
+                fontWeight: 'bold',
+                fontFamily: 'Poppins',
+            }
         },
         subtitle: {
             text: 'Calories distribution in a day',
@@ -188,7 +194,7 @@ const PieChart = (props) => {
 
     return (
         <div>
-            <div style={{color:'orange'}}>
+            <div style={{color:'#F2613F'}}>
         Calories burnt: 
             {props.achieved} / {props.goal}
             </div>

@@ -93,19 +93,20 @@ const textStyle1 = {
 const heading1 = {
   fontSize: '40px',
   fontWeight: 'bold',
- 
-  color: '#1ABC9C',
+  fontFamily: 'Poppins',
+  marginLeft:'100px',
+  color: '#F2613F',
 };
 
 const text1 = {
   fontSize: '20px',
-  fontWeight: 'bold',
+  fontWeight: 'lighter',
 
 };
 
 const text2 = {
   fontSize: '20px',
-  fontWeight: 'bold',
+  fontWeight: '',
   
 };
   
@@ -128,13 +129,15 @@ const text2 = {
           <div style={containerStyle1}>
                 <div style={textStyle1}>
                     <h1 style={heading1}>Heart Rate Tracker</h1>
+                    <hr />
                     <br>
                     </br>
-                    <p style={{fontWeight:'bold',fontSize:'20px'}}>
+                    <p style={{fontWeight:'',fontSize:'20px'}}>
                         This Chart shows the heart rate of the user in real time.
                         dashed line is recommended heart rate and solid line is recommended heart rate
                         intensity of the heart rate is shown by the color of the line
                     </p>
+                    
                   </div>
             </div>
             <br>

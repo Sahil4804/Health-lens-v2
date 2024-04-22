@@ -53,7 +53,7 @@ const TauArcComponent = ({ width }) => {
 
 return (
     <div className='svg-container'>
-        <h3 className='header'>Calorie Tracker</h3>
+        <h3 className='header' style={{fontFamily:'Poppins',color:'#F2613F'}}>Calorie Tracker</h3>
         <svg ref={svgRef} className='calorie-tracker'></svg>
     </div>
 );

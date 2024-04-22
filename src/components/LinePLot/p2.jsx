@@ -286,16 +286,18 @@ const Race2 = (props) => {
   return (
     <>
     <p>
-          <div style={{ textAlign: 'center', fontSize: '30px', marginBottom: '20px' }}>Analysis of steps With your friends over 24hr</div>
-          <p style={{ fontSize: '15px', textAlign: 'center', fontWeight: 'bold',marginBottom: '10px' , fontFamily: 'Arial, sans-serif' }}>
+          <div style={{ textAlign: 'center', fontSize: '30px', marginBottom: '20px',color:'#F2613F' }}>Analysis of steps With your friends over 24hr</div>
+          <p style={{ fontSize: '15px', textAlign: 'center',marginBottom: '10px' , fontFamily: 'Poppins, sans-serif'}}>
             The following graph shows the number of steps taken by yourself and the average number of steps taken by you in the past days as you over a 24 hour period.
           </p>
         </p>
     <div style={{
-        display: 'flex',
+        display: 'block',
         justifyContent: 'center',
         alignItems: 'center',
         height: '80vh', /* Optional: makes the container full height of the viewport */
+        marginBottom: '150px',
+        marginLeft:'25vw'
       }}>
         <div style={{
           border: '2px solid #ccc',
@@ -303,10 +305,14 @@ const Race2 = (props) => {
           height: '600px',
           padding: '0px',
           borderRadius: '5px',
+          marginTop:'80px',
         }}
        ref={chartRef}>
         
        </div>
+
+<div style={{display:'block',marginBottom:'100px',marginTop:'100px',fontSize:'2vw',marginLeft:'100px',color:'#F2613F'}}>Static visualization of ranking in 24hrs</div>
+
 
     </div>
     <div style={{

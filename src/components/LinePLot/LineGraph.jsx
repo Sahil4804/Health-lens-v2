@@ -13,7 +13,7 @@ const StepCountsGraph = (props) => {
 
   return (
     <div className="line-graph-container">
-      <h3 className="header">Step Counts</h3>
+      {/* <h3 className="header">Step Counts</h3> */}
       {dateUsed && (
         <>
           <Linechart date_used={dateUsed} />

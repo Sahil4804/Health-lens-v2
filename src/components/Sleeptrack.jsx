@@ -8,6 +8,7 @@ import ExportData from 'highcharts/modules/export-data';
 import Accessibility from 'highcharts/modules/accessibility';
 import { useEffect } from 'react';
 import '../Sleep1.css';
+import TreegraphComponent2 from '../Treegraph2';
 
 HighchartsMore(Highcharts);
 ColorAxis(Highcharts);
@@ -307,16 +308,16 @@ weekLabels = Array(4)
         },
       },
       title: {
-        text: "Advanced Polar Chart",
-      },
+        text: "",
+        },
       subtitle: {
-        text: "SLEEP TRACKER",
+        text: "Sleep",
         useHTML: "true",
         align: "center",
         y: 35,
         verticalAlign: "middle",
         style: {
-          fontSize: "1em",
+          fontSize: "1vw",
           color: "white",
           textAlign: "center",
         },
@@ -675,10 +676,10 @@ weekLabels = Array(4)
             pointFormat:
               asColFieldStr("<b>Total Sleep: </b><span>{point.high}</span>") +
               asColFieldStr(
-                "<b>Highest Amount in Sleep: </b><span>{point.highscore}</span>"
+                "<b>Highest Amount: </b><span>{point.highscore}</span>"
               ) +
               asColFieldStr(
-                "<b>HIghest Sleep Type: </b><span>{point.topEarner}</span>"
+                "<b>Type: </b><span>{point.topEarner}</span>"
               ),
             
           },
@@ -692,10 +693,12 @@ weekLabels = Array(4)
   render() {
     return (
       <div>
+        <div style={{fontSize:'2vw',fontFamily:'Poppins',fontWeight:'bold',color:'#F2613F',marginLeft:'43vw',marginBottom:'8vh'}}>Sleep Tracker</div>
         <figure className="highcharts-figure">
           <div id="container"></div>
          
         </figure>
+        <TreegraphComponent2/>
       </div>
     );
   }

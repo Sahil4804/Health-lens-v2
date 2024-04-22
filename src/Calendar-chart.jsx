@@ -212,6 +212,7 @@ const options = {
   title: {
     text: "Day Stepcount of Person in July",
     align: "center",
+    
   },
   accessibility: {
     landmarkVerbosity: "one",
@@ -284,7 +285,8 @@ const options = {
           style: {
             textOutline: "none",
             fontWeight: "normal",
-            fontSize: "1rem",
+            fontSize: "1vw",
+            
           },
           y: 4,
         },
@@ -299,9 +301,10 @@ const options = {
           style: {
             textOutline: "none",
             color: "rgba(70, 70, 92, 1)",
-            fontSize: "0.8rem",
+            fontSize: "1vw",
             fontWeight: "bold",
             opacity: 0.5,
+            // color:'red'
           },
           x: 1,
           y: 1,
@@ -361,6 +364,8 @@ const HeatmapChart = () => {
                 style: {
                   textTransform: "uppercase",
                   fontWeight: "bold",
+                  fontSize: "1vw",
+                  
                 },
               },
               accessibility: {
@@ -409,7 +414,7 @@ const HeatmapChart = () => {
                     style: {
                       textOutline: "none",
                       fontWeight: "normal",
-                      fontSize: "1rem",
+                      fontSize: "1.3vw",
                     },
                     y: 4,
                   },
@@ -424,7 +429,7 @@ const HeatmapChart = () => {
                     style: {
                       textOutline: "none",
                       color: "rgba(70, 70, 92, 1)",
-                      fontSize: "0.8rem",
+                      fontSize: "1vw",
                       fontWeight: "bold",
                       opacity: 0.5,
                     },
