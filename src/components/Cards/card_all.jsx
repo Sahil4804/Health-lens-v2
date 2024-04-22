@@ -3,8 +3,9 @@ import './card_all.css'; // Import your CSS file
 import heartpulse from './heartpulse.jpg';
 import sleep from './Sleep101.jpg';
 import step from './step.png';
+import calories from './calories.png';
 
-const Card = ({ dataImage,name }) => {
+const Card = ({ dataImage,name,discription }) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
   const [mouseX, setMouseX] = useState(0);
@@ -46,7 +47,7 @@ const Card = ({ dataImage,name }) => {
         <div className="card-bg" style={{ ...cardBgTransform, ...cardBgImage }}></div>
         <div className="card-info">
           <h2 className="header">{name}</h2>
-          <p className="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p className="content">{discription}</p>
         </div>
       </div>
     </div>
@@ -55,11 +56,14 @@ const Card = ({ dataImage,name }) => {
 
 const Cards_return = () => {
   return (
-    <div id="app" className="container">
-      <Card dataImage={heartpulse} name="Heart Rate" />
-      <Card dataImage={step} name="Step Count"/>
-      <Card dataImage={sleep} name="Sleep" />
-      <Card dataImage="https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=" name="Calories"/>
+    <div className="container">
+      <h1 className="heading">Our Services</h1>
+      <div id="app" className="container">
+        <Card dataImage={heartpulse} name="Heart Rate" discription="Tracking of Live Heart" />
+        <Card dataImage={step} name="Step Count" discription="Tracking of stepcount and relative analysis with friends"/>
+        <Card dataImage={sleep} name="Sleep" discription="analysis of diffrent kind of sleep over period of 28 days" />
+        <Card dataImage={calories} name="Calories" discription="Discriptive Analysis of Calories Burn"/>
+      </div>
     </div>
   );
 };

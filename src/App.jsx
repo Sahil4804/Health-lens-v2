@@ -96,6 +96,18 @@ const heading1 = {
   fontFamily: 'Arial, sans-serif',
   color: '#1ABC9C',
 };
+
+const text1 = {
+  fontSize: '20px',
+  fontWeight: 'bold',
+  fontFamily: 'Arial, sans-serif',
+};
+
+const text2 = {
+  fontSize: '20px',
+  fontWeight: 'bold',
+  fontFamily: 'Arial, sans-serif',
+};
   
   return (
     <div style={{ width: "50px" }} >
@@ -118,8 +130,14 @@ const heading1 = {
                     <h1 style={heading1}>Heart Rate Tracker</h1>
                     <br>
                     </br>
-                    <p>
+                    <p style={text1}>
                         This Chart shows the heart rate of the user in real time.
+                    </p>
+                    <p style={text2}>
+                        dashed line is recommended heart rate
+                    </p>
+                    <p style={text1}>
+                        solid line is recommended heart rate
                     </p>
                 </div>
             </div>
