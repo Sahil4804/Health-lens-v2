@@ -10,6 +10,7 @@ import Sidebar from './Sidebar.jsx';
 import Heatmap from './Heatmap.jsx';
 import PolarChart from './components/Sleeptrack.jsx';
 import HeatmapChart from './Calendar-chart.jsx';
+import MyResponsiveAreaBump from './Rank-2.jsx';
 function Sup({ option }) {
   const [themeMode, setThemeMode] = useState('light');
   const [isloading, setIsloading] = useState(true);
@@ -39,8 +40,8 @@ function Sup({ option }) {
         
         <App isloading={isloading} changer={makefalse} />
     
-        {/* <StepCountsGraph /> */}
       </div>
+        {/* <StepCountsGraph /> */}
 
       <div style={{ position: 'relative' }}>
         <Heatmap />
@@ -48,8 +49,9 @@ function Sup({ option }) {
       <div style={{position:'relative',top:'110vh'}}>
         <HeatmapChart/>
       </div>
-
-
+      {/* <div style={{height:'60vh',position:'absolute',top:'120vh'}}> 
+        
+</div> */}
     </ThemeProvider>
   );
 

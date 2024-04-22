@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Linechart from './p1';
 import Race2 from './p2';
+// import MyResponsiveAreaBump from '../../Rank-2';
 
 const StepCountsGraph = (props) => {
   const [dateUsed, setDateUsed] = useState(props.date_sent);
