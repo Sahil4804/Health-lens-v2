@@ -45,6 +45,7 @@ function Sup({ option }) {
 
          <div style={{position:'relative',top:'15vh',fontFamily:'Poppins'}}>
             <Cards_return />
+           
          </div>
         
         <App isloading={isloading} changer={makefalse} />
@@ -58,10 +59,14 @@ function Sup({ option }) {
         < Heatmap />
         
       </div>
-      <div style={{position:'relative',top:'40vh',fontFamily:'Poppins'}}>
+      <div style={{position:'relative',top:'60vh',fontFamily:'Poppins'}}>
+        <div style={{fontSize:'2vw',fontWeight:'bold',left:'45vw',position:'relative',color:'#F2613F',marginBottom:'-8vw'}}>Steps Tracker
+        <div style={{width:'80vw',marginLeft:'-30vw'}}><hr /></div>
+        </div>
+        
         <HeatmapChart/>
       </div>
-        <div style={{position:'relative',top:'60vh'}}>
+        <div style={{position:'relative',top:'80vh'}}>
             <HighchartsChart />
         </div>
     </ThemeProvider>

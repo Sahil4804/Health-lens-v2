@@ -57,8 +57,10 @@ const Card = ({ dataImage,name,discription }) => {
 const Cards_return = () => {
   return (
     <div className="container">
-      <h1 className="heading" style={{fontFamily:'Poppins',color:'#F2613F'}}>Our Services</h1>
+      <h1 className="heading" style={{fontFamily:'Poppins',color:'#F2613F'}}>Our Services <hr /></h1>
+      
       <div id="app" className="container">
+        
         <Card dataImage={heartpulse} name="Heart Rate" discription="Tracking of Live Heart" />
         <Card dataImage={step} name="Step Count" discription="Tracking of stepcount and relative analysis with friends"/>
         <Card dataImage={sleep} name="Sleep" discription="analysis of diffrent kind of sleep over period of 28 days" />

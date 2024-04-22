@@ -693,7 +693,10 @@ weekLabels = Array(4)
   render() {
     return (
       <div>
-        <div style={{fontSize:'2vw',fontFamily:'Poppins',fontWeight:'bold',color:'#F2613F',marginLeft:'43vw',marginBottom:'8vh'}}>Sleep Tracker</div>
+        <div style={{fontSize:'2vw',fontFamily:'Poppins',fontWeight:'bold',color:'#F2613F',marginLeft:'43vw',marginBottom:'5vh'}}>Sleep Tracker</div>
+       <div style={{width:'80vw',marginLeft:'10vw',marginBottom:'3vw'}}>
+       <hr />
+        </div>   
         <figure className="highcharts-figure">
           <div id="container"></div>
          

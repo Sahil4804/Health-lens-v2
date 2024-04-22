@@ -84,7 +84,9 @@ function Heatmap() {
         }}
 
       >
-        <div style={{fontSize:'2vw',marginLeft:'35vw',fontFamily:'Poppins',color:'#F2613F',fontWeight:'bold'}}>Calories Tracker</div>
+        
+        <div style={{fontSize:'2vw',marginLeft:'35vw',fontFamily:'Poppins',color:'#F2613F',fontWeight:'bold',marginBottom:'1vw'}}>Calories Tracker</div>
+        <hr style={{marginBottom:'2vw'}}/>
         <CalendarHeatmap
           startDate={shiftDate(today, -365)}
           endDate={today}
