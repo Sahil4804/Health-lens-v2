@@ -89,7 +89,7 @@ const Linechart = (props) => {
 
   return (
     // <HighchartsReact highcharts={Highcharts} options={config} ref={chartRef} />
-    <div className='wrapperstepline'>
+    // <div className='wrapperstepline'>
     <div className='box'>
       <div style={{
         display: 'flex',
@@ -108,7 +108,7 @@ const Linechart = (props) => {
       </div>
     </div>
 
-    </div>
+    // </div>
   );
 };
 
