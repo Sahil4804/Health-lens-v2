@@ -23,7 +23,7 @@ const map_month_to_number = {
   Dec: 11,
 };
 function Heatmap() {
-  const [goal, setGoal] = useState(100);
+  const [goal, setGoal] = useState(3000);
   const [clickedDate, setClickedDate] = useState(null);
   const [globaldata, setglobaldata] = useState(heatmapdata.reverse());
   const [heatmap, setheatmap] = useState(heatmapdata.reverse());
@@ -78,7 +78,7 @@ function Heatmap() {
         position: "absolute",
         top: "20vh",
         marginLeft: "10vw",
-        
+
       }}
     >
       <CalendarHeatmap
@@ -91,7 +91,7 @@ function Heatmap() {
           }
           const count = value.count;
           if (count < 1200) {
-            return "color-github-1"; // Color for values less than 5
+            return "color-github-0"; // Color for values less than 5
           } else if (count < 1400) {
             // Adjust the ranges as needed
             return "color-github-2"; // Color for values between 5 and 100
@@ -111,38 +111,45 @@ function Heatmap() {
         showWeekdayLabels={true}
         onClick={(value) => setClickedDate(value.date)}
       />
+      <div style={{ position: 'absolute' }}>
+        <span style={{marginRight:'1vw'}}>
+          Custom Range:
+        </span>
+        <Space direction="vertical" size={12} >
+          <RangePicker
+            onChange={(dates) => {
+              handleChange(dates);
+            }}
+          />
+        </Space>
+      </div>
       {clickedDate && (
-        <div style={{ position: "absolute", backgroundColor: "white", padding: "8px", border: "1px solid gray", left: '60vw' ,width:'20vw'}}>
-           <PieChart key={`${goal}-${data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count}`} achieved={data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0} goal={ goal} />
-          <p>Date: {clickedDate.toString().slice(0, 15)}</p>
-          <p>Submissions: {data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0}</p>
-          <p>Formatted Date: {clickedDate.toLocaleDateString()}</p>
-          <input type="text" onChange={(e) => {
+        <div style={{ position: "absolute", backgroundColor: "white", borderRadius: '10px', padding: "8px", border: "1px solid gray", left: '20vw', width: '40vw',top:'25vw' }}>
+          <PieChart key={`${goal}-${data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count}`} achieved={data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0} goal={goal} />
+          <div style={{ display: 'flex', gap: '5vw' }}>
+
+            <p>Date: {clickedDate.toString().slice(0, 15)}</p>
+            <p>Calories: {data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0}</p>
+          </div>
+          <input type="text" style={{ padding: '10px', borderRadius: '10px', marginTop: '10px' }} onChange={(e) => {
             setGoal(e.target.value);
           }} placeholder="Set your Goal"></input>
 
         </div>
       )}
-      <Space direction="vertical" size={12}>
-        <RangePicker
-          onChange={(dates) => {
-            handleChange(dates);
-          }}
-        />
-      </Space>
 
 
-      <div>
-      <h3>Color Scale Legend</h3>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-        {colorRanges.map((range, index) => (
-          <div key={index} style={{ display: "flex", alignItems: "center", margin: "5px" }}>
-            <div style={{ width: "20px", height: "20px", backgroundColor: range.color, marginRight: "5px" }}></div>
-            <span>{range.label}</span>
-          </div>
-        ))}
+
+      <div style={{position:'relative',left:'60vw'}}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+          {colorRanges.map((range, index) => (
+            <div key={index} style={{ display: "flex", alignItems: "center", margin: "5px" }}>
+              <div style={{ width: "20px", height: "20px", backgroundColor: range.color, marginRight: "5px" }}></div>
+              <span>{range.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

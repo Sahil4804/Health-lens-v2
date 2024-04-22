@@ -108,11 +108,11 @@ const PieChart = (props) => {
             type: 'pie'
         },
         title: {
-            text: 'Departamental Strength of the Company',
+            text: 'Calories',
             align: 'left'
         },
         subtitle: {
-            text: 'Custom animation of pie series',
+            text: 'Calories distribution in a day',
             align: 'left'
         },
         tooltip: {
@@ -160,7 +160,7 @@ const PieChart = (props) => {
                         y: 14.2
                     },
                     {
-                        name: '',
+                        name: 'Target Missed',
                         y: 25.6
                     }
                 ]
@@ -188,7 +188,10 @@ const PieChart = (props) => {
 
     return (
         <div>
-            {props.achieved} -- {props.goal}
+            <div style={{color:'orange'}}>
+        Calories burnt: 
+            {props.achieved} / {props.goal}
+            </div>
             <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
     );

@@ -34,11 +34,9 @@ function Sup({ option }) {
     <ThemeProvider value={{ themeMode, darkTheme, lightTheme }}>
       
       <div >
-        <Navbar />
-        
-
-        
+        <Navbar /> 
         <App isloading={isloading} changer={makefalse} />
+        {/* <h2 style={{position:'relative',top:'20vh'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem tempore quas ipsam temporibus. A blanditiis quasi nisi magni quidem. Nemo quae commodi autem beatae, itaque excepturi culpa quia in dolorum.</h2> */}
     
       </div>
         {/* <StepCountsGraph /> */}
@@ -46,12 +44,9 @@ function Sup({ option }) {
       <div style={{ position: 'relative' }}>
         <Heatmap />
       </div>
-      <div style={{position:'relative',top:'110vh'}}>
+      <div style={{position:'relative',top:'120vh'}}>
         <HeatmapChart/>
       </div>
-      {/* <div style={{height:'60vh',position:'absolute',top:'120vh'}}> 
-        
-</div> */}
     </ThemeProvider>
   );
 
