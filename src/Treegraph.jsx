@@ -47,6 +47,9 @@ const data = [
 
 const TreegraphComponent = () => {
     const options = {
+        credits:{
+            enabled:false
+        },  
         title: {
             text: 'Calories Description',
 

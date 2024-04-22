@@ -68,7 +68,10 @@ const Introduction = () => {
                     </br>
                     
                     <p style={{fontWeight:'lighter',width:'50vw'}}>
-                        This is a dashboard that displays the data of a user's daily activities. The data is displayed in the form of charts and graphs. The dashboard is divided into multiple sections, each displaying different types of data. The data includes information about the user's heart rate, blood pressure, step count, sleep patterns, and calorie intake. The dashboard is designed to be user-friendly and easy to navigate. The user can switch between different views and customize the dashboard according to their preferences. The dashboard also includes a dark mode feature for users who prefer a darker color scheme.
+                        This is a dashboard that displays the data of a user's daily activities. The data is displayed in the form of charts and graphs.
+                        The dashboard is divided into multiple sections, each displaying different types of data. 
+                        The data includes information about the user's heart rate, step count, sleep patterns, and calorie. The dashboard is designed to be user-friendly and easy to navigate.
+                        Our Dashboard Provides a detailed analysis of the user's daily activities and helps the user to keep track of their health and fitness goals.
                     </p>
                 </div>
                 <span

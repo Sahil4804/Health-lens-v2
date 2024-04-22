@@ -158,6 +158,7 @@ class HighchartsChart extends Component {
      weekLabels;
 
    scoreData = data[3];
+   
    colors = Highcharts.getOptions().colors.map(Highcharts.Color.parse);
    monthExtremes = { min: 0, max: 28 };
    weekExtremes = { min: 1, max: 5 };
@@ -307,6 +308,9 @@ weekLabels = Array(4)
           },
         },
       },
+      credits:{
+        enabled:false
+    },
       title: {
         text: "",
         },

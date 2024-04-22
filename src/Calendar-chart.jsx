@@ -387,6 +387,9 @@ const HeatmapChart = () => {
               layout: "vertical",
               verticalAlign: "middle",
             },
+            credits:{
+              enabled:false
+          },
             colorAxis: {
               min: 0,
               stops: [
