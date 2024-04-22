@@ -74,82 +74,134 @@ function Heatmap() {
   return (
     // <div className="wrappercf">
     <div className="box">
-    <div
-      style={{
-        width: "80vw",
-        position: "absolute",
-        top: "20vh",
-        marginLeft: "10vw",
+      <div
+        style={{
+          width: "80vw",
+          position: "relative",
+          top: "20vh",
+          marginLeft: "10vw",
+        }}
+      >
+        <CalendarHeatmap
+          startDate={shiftDate(today, -365)}
+          endDate={today}
+          values={data}
+          classForValue={(value) => {
+            if (!value) {
+              return "color-empty";
+            }
+            const count = value.count;
+            if (count < 1200) {
+              return "color-github-0"; // Color for values less than 5
+            } else if (count < 1400) {
+              // Adjust the ranges as needed
+              return "color-github-2"; // Color for values between 5 and 100
+            } else if (count < 1600) {
+              return "color-github-3"; // Color for values between 100 and 500
+            } else if (count < 1800) {
+              return "color-github-4"; // Color for values between 500 and 1000
+            } else {
+              return "color-github-5"; // Color for values greater than or equal to 1000
+            }
+          }}
+          tooltipDataAttrs={(value) => {
+            return {
+              "data-tip": `${value.count} submissions on ${value.date
+                .toString()
+                .slice(4, 15)}`,
+            };
+          }}
+          showWeekdayLabels={true}
+          onClick={(value) => setClickedDate(value.date)}
+        />
+        <div style={{ position: "absolute" }}>
+          <span style={{ marginRight: "1vw" }}>Custom Range:</span>
+          <Space direction="vertical" size={12}>
+            <RangePicker
+              onChange={(dates) => {
+                handleChange(dates);
+              }}
+            />
+          </Space>
+        </div>
 
-      }}
-    >
-      <CalendarHeatmap
-        startDate={shiftDate(today, -365)}
-        endDate={today}
-        values={data}
-        classForValue={(value) => {
-          if (!value) {
-            return "color-empty";
-          }
-          const count = value.count;
-          if (count < 1200) {
-            return "color-github-0"; // Color for values less than 5
-          } else if (count < 1400) {
-            // Adjust the ranges as needed
-            return "color-github-2"; // Color for values between 5 and 100
-          } else if (count < 1600) {
-            return "color-github-3"; // Color for values between 100 and 500
-          } else if (count < 1800) {
-            return "color-github-4"; // Color for values between 500 and 1000
-          } else {
-            return "color-github-5"; // Color for values greater than or equal to 1000
-          }
-        }}
-        tooltipDataAttrs={(value) => {
-          return {
-            "data-tip": `${value.count} submissions on ${value.date.toString().slice(4, 15)}`,
-          };
-        }}
-        showWeekdayLabels={true}
-        onClick={(value) => setClickedDate(value.date)}
-      />
-      <div style={{ position: 'absolute' }}>
-        <span style={{marginRight:'1vw'}}>
-          Custom Range:
-        </span>
-        <Space direction="vertical" size={12} >
-          <RangePicker
-            onChange={(dates) => {
-              handleChange(dates);
+        <div style={{ position: "absolute", left: "60vw" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
             }}
-          />
-        </Space>
-      </div>
-      {clickedDate && (
-        <div style={{ position: "absolute", backgroundColor: "white", borderRadius: '10px', padding: "8px", border: "1px solid gray", left: '20vw', width: '40vw',top:'25vw' }}>
-          <PieChart key={`${goal}-${data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count}`} achieved={data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0} goal={goal} />
-          <div style={{ display: 'flex', gap: '5vw' }}>
-
-            <p>Date: {clickedDate.toString().slice(0, 15)}</p>
-            <p>Calories: {data.find((d) => d.date.toDateString() === clickedDate.toDateString())?.count || 0}</p>
+          >
+            {colorRanges.map((range, index) => (
+              <div
+                key={index}
+                style={{ display: "flex", alignItems: "center", margin: "5px" }}
+              >
+                <div
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    backgroundColor: range.color,
+                    marginRight: "5px",
+                  }}
+                ></div>
+                <span>{range.label}</span>
+              </div>
+            ))}
           </div>
-          <input type="text" style={{ padding: '10px', borderRadius: '10px', marginTop: '10px' }} onChange={(e) => {
-            setGoal(e.target.value);
-          }} placeholder="Set your Goal"></input>
+        </div>
 
-        </div>
-      )}
-      <div style={{position:'relative',left:'60vw'}}>
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-          {colorRanges.map((range, index) => (
-            <div key={index} style={{ display: "flex", alignItems: "center", margin: "5px" }}>
-              <div style={{ width: "20px", height: "20px", backgroundColor: range.color, marginRight: "5px" }}></div>
-              <span>{range.label}</span>
+        {clickedDate && (
+          <div
+            style={{
+              position: "relative",
+              backgroundColor: "white",
+              borderRadius: "10px",
+              padding: "8px",
+              border: "1px solid gray",
+              left: "20vw",
+              width: "40vw",
+              top: "7vw",
+            }}
+          >
+            <PieChart
+              key={`${goal}-${
+                data.find(
+                  (d) => d.date.toDateString() === clickedDate.toDateString()
+                )?.count
+              }`}
+              achieved={
+                data.find(
+                  (d) => d.date.toDateString() === clickedDate.toDateString()
+                )?.count || 0
+              }
+              goal={goal}
+            />
+            <div style={{ display: "flex", gap: "5vw" }}>
+              <p>Date: {clickedDate.toString().slice(0, 15)}</p>
+              <p>
+                Calories:{" "}
+                {data.find(
+                  (d) => d.date.toDateString() === clickedDate.toDateString()
+                )?.count || 0}
+              </p>
             </div>
-          ))}
-        </div>
+            <input
+              type="text"
+              style={{
+                padding: "10px",
+                borderRadius: "10px",
+                marginTop: "10px",
+              }}
+              onChange={(e) => {
+                setGoal(e.target.value);
+              }}
+              placeholder="Set your Goal"
+            ></input>
+          </div>
+        )}
       </div>
-    </div>
     </div>
   );
 }

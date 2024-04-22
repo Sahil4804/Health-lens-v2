@@ -13,6 +13,7 @@ import HeatmapChart from './Calendar-chart.jsx';
 import MyResponsiveAreaBump from './Rank-2.jsx';
 import Introduction from './components/Introduction/Intro_main';
 import Cards_return from './components/Cards/card_all';
+import HighchartsChart from "./components/Sleeptrack.jsx";
 function Sup({ option }) {
   const [themeMode, setThemeMode] = useState('light');
   const [isloading, setIsloading] = useState(true);
@@ -55,9 +56,12 @@ function Sup({ option }) {
         {/* <Cards_return /> */}
         < Heatmap />
       </div>
-      <div style={{position:'relative',top:'160vh'}}>
+      <div style={{position:'relative',top:'40vh'}}>
         <HeatmapChart/>
       </div>
+        <div style={{position:'relative',top:'60vh'}}>
+            <HighchartsChart />
+        </div>
     </ThemeProvider>
   );
 

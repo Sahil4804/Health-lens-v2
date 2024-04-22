@@ -691,12 +691,10 @@ weekLabels = Array(4)
 
   render() {
     return (
-      <div style={{marginTop:"200px"}}>
+      <div>
         <figure className="highcharts-figure">
           <div id="container"></div>
-          <p className="highcharts-description">
-            An advanced polar chart, showing the performance of three sales teams throughout a month
-          </p>
+         
         </figure>
       </div>
     );
