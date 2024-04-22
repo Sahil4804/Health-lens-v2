@@ -15,7 +15,91 @@
     /*grid-template-columns: repeat(2, minmax(0, 1fr))*/
 
 }
+.wrappercf {
+    width: 100vw;
+    height: 60vh;
+    /* min-width: 700px; */
+    /* position: absolute; */
+    position: relative;
+    left: 20vw;
+    top: 10vh;
+    padding-top: 50px;
+    padding-left: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 80px;
+    overflow-x: auto;
+    /*grid-template-columns: repeat(2, minmax(0, 1fr))*/
 
+}
+.wrapperstep {
+    width: 60vw;
+    height: 60vh;
+    /* min-width: 700px; */
+    /* position: absolute; */
+    position: relative;
+    left: 20vw;
+    top: 10vh;
+    padding-top: 50px;
+    padding-left: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 80px;
+    overflow-x: auto;
+    /*grid-template-columns: repeat(2, minmax(0, 1fr))*/
+
+}
+.wrapperstepline {
+    width: 60vw;
+    height: 70vh;
+    /* min-width: 700px; */
+    /* position: absolute; */
+    position: relative;
+    left: 20vw;
+    top: 10vh;
+    padding-top: 50px;
+    padding-left: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 80px;
+    overflow-x: auto;
+    /*grid-template-columns: repeat(2, minmax(0, 1fr))*/
+
+}
+.wrappersteprace1 {
+    width: 60vw;
+    height: 70vh;
+    /* min-width: 700px; */
+    /* position: absolute; */
+    position: relative;
+    left: 20vw;
+    top: 10vh;
+    padding-top: 50px;
+    padding-left: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 80px;
+    overflow-x: auto;
+    /*grid-template-columns: repeat(2, minmax(0, 1fr))*/
+
+}
+.wrappersteprace {
+    width: 60vw;
+    height: 70vh;
+    /* min-width: 700px; */
+    /* position: absolute; */
+    position: relative;
+    left: 20vw;
+    top: 10vh;
+    padding-top: 50px;
+    padding-left: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 80px;
+    overflow-x: auto;
+    /*grid-template-columns: repeat(2, minmax(0, 1fr))*/
+
+}
 
 @media only screen and (min-width: 0px) and (max-width: 1500px) {
     .wrapper {

@@ -325,119 +325,121 @@ const HeatmapChart = () => {
       console.log(selectedDate);
     };
   return (
-    <div className='wrapper'>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={{
-          chart: {
-            type: "heatmap",
-          },
-          title: {
-            text: "Day Stepcount of Person July 2023",
-            align: "center",
-          },
-          accessibility: {
-            landmarkVerbosity: "one",
-          },
-          tooltip: {
-            enabled: true,
-            outside: true,
-            zIndex: 20,
-            headerFormat: "",
-            pointFormat:
-              "{#unless point.custom.empty}{point.date:%A, %b %e, %Y}{/unless}",
-            nullFormat: "No data",
-          },
-          xAxis: {
-            categories: weekdays,
-            opposite: true,
-            lineWidth: 26,
-            offset: 13,
-            lineColor: "rgba(27, 26, 37, 0.2)",
-            labels: {
-              rotation: 0,
-              y: 20,
-              style: {
-                textTransform: "uppercase",
-                fontWeight: "bold",
+    <div>
+      <div className="wrapperstep">
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={{
+            chart: {
+              type: "heatmap",
+            },
+            title: {
+              text: "Day Stepcount of Person July 2023",
+              align: "center",
+            },
+            accessibility: {
+              landmarkVerbosity: "one",
+            },
+            tooltip: {
+              enabled: true,
+              outside: true,
+              zIndex: 20,
+              headerFormat: "",
+              pointFormat:
+                "{#unless point.custom.empty}{point.date:%A, %b %e, %Y}{/unless}",
+              nullFormat: "No data",
+            },
+            xAxis: {
+              categories: weekdays,
+              opposite: true,
+              lineWidth: 26,
+              offset: 13,
+              lineColor: "rgba(27, 26, 37, 0.2)",
+              labels: {
+                rotation: 0,
+                y: 20,
+                style: {
+                  textTransform: "uppercase",
+                  fontWeight: "bold",
+                },
+              },
+              accessibility: {
+                description: "weekdays",
+                rangeDescription:
+                  "X Axis is showing all 7 days of the week, starting with Sunday.",
               },
             },
-            accessibility: {
-              description: "weekdays",
-              rangeDescription:
-                "X Axis is showing all 7 days of the week, starting with Sunday.",
+            yAxis: {
+              min: 0,
+              max: 5,
+              accessibility: {
+                description: "weeks",
+              },
+              visible: false,
             },
-          },
-          yAxis: {
-            min: 0,
-            max: 5,
-            accessibility: {
-              description: "weeks",
+            legend: {
+              align: "right",
+              layout: "vertical",
+              verticalAlign: "middle",
             },
-            visible: false,
-          },
-          legend: {
-            align: "right",
-            layout: "vertical",
-            verticalAlign: "middle",
-          },
-          colorAxis: {
-            min: 0,
-            stops: [
-              [0.2, "#AED6F1"],
-              [0.4, "#85C1E9"],
-              [0.6, "#3498DB"],
-              [0.9, "#2874A6"],
-            ],
-            labels: {
-              format: "{value} steps",
-            },
-          },
-          series: [
-            {
-              keys: ["x", "y", "value", "date", "id"],
-              data: chartData,
-              nullColor: "rgba(196, 196, 196, 0.2)",
-              borderWidth: 2,
-              borderColor: "rgba(196, 196, 196, 0.2)",
-              dataLabels: [
-                {
-                  enabled: true,
-                  format:
-                    "{#unless point.custom.empty}{point.value}{/unless}",
-                  style: {
-                    textOutline: "none",
-                    fontWeight: "normal",
-                    fontSize: "1rem",
-                  },
-                  y: 4,
-                },
-                {
-                  enabled: true,
-                  align: "left",
-                  verticalAlign: "top",
-                  format:
-                    "{#unless point.custom.empty}{point.custom.monthDay}{/unless}",
-                  backgroundColor: "whitesmoke",
-                  padding: 2,
-                  style: {
-                    textOutline: "none",
-                    color: "rgba(70, 70, 92, 1)",
-                    fontSize: "0.8rem",
-                    fontWeight: "bold",
-                    opacity: 0.5,
-                  },
-                  x: 1,
-                  y: 1,
-                },
+            colorAxis: {
+              min: 0,
+              stops: [
+                [0.2, "#AED6F1"],
+                [0.4, "#85C1E9"],
+                [0.6, "#3498DB"],
+                [0.9, "#2874A6"],
               ],
-              events: {
-                click: handlePointClick,
+              labels: {
+                format: "{value} steps",
               },
             },
-          ],
-        }}
-      />
+            series: [
+              {
+                keys: ["x", "y", "value", "date", "id"],
+                data: chartData,
+                nullColor: "rgba(196, 196, 196, 0.2)",
+                borderWidth: 2,
+                borderColor: "rgba(196, 196, 196, 0.2)",
+                dataLabels: [
+                  {
+                    enabled: true,
+                    format:
+                      "{#unless point.custom.empty}{point.value}{/unless}",
+                    style: {
+                      textOutline: "none",
+                      fontWeight: "normal",
+                      fontSize: "1rem",
+                    },
+                    y: 4,
+                  },
+                  {
+                    enabled: true,
+                    align: "left",
+                    verticalAlign: "top",
+                    format:
+                      "{#unless point.custom.empty}{point.custom.monthDay}{/unless}",
+                    backgroundColor: "whitesmoke",
+                    padding: 2,
+                    style: {
+                      textOutline: "none",
+                      color: "rgba(70, 70, 92, 1)",
+                      fontSize: "0.8rem",
+                      fontWeight: "bold",
+                      opacity: 0.5,
+                    },
+                    x: 1,
+                    y: 1,
+                  },
+                ],
+                events: {
+                  click: handlePointClick,
+                },
+              },
+            ],
+          }}
+        />
+      </div>
       {selectedDate && <StepCountsGraph date_sent={selectedDate} />}
     </div>
   );

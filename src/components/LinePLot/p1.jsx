@@ -89,6 +89,7 @@ const Linechart = (props) => {
 
   return (
     // <HighchartsReact highcharts={Highcharts} options={config} ref={chartRef} />
+    <div className='wrapperstepline'>
     <div className='box'>
       <div style={{
         display: 'flex',
@@ -105,6 +106,8 @@ const Linechart = (props) => {
           <HighchartsReact highcharts={Highcharts} options={config} ref={chartRef} />
         </div>
       </div>
+    </div>
+
     </div>
   );
 };

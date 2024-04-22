@@ -72,7 +72,7 @@ function Heatmap() {
     { label: "Greater than or equal to 1800", color: "#1e6823" },  // Color for values greater than or equal to 1800
   ];
   return (
-    <div className="wrapper">
+    <div className="wrappercf">
     <div className="box">
     <div
       style={{

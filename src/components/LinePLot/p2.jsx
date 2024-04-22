@@ -285,7 +285,7 @@ const Race2 = (props) => {
   //   return <div ref={chartRef} style={{ width: '600px', height: '800px' }} />;
   return (
     <>
-    
+    <div className='wrappersteprace1'>
     <div style={{
       display: 'flex',
       justifyContent: 'center',
@@ -305,6 +305,7 @@ const Race2 = (props) => {
       alignItems: 'center',
       height: '100vh', /* Optional: makes the container full height of the viewport */
     }}>
+    </div>
 
 <MyResponsiveAreaBump data={newdata}/>
     </div>
