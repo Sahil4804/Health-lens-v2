@@ -6,6 +6,7 @@ import highchartsExporting from 'highcharts/modules/exporting';
 import highchartsAccessibility from 'highcharts/modules/accessibility';
 import { useState } from "react";
 import StepCountsGraph from './components/LinePLot/LineGraph';
+import "./App.css";
 
 highchartsHeatmap(Highcharts);
 highchartsExporting(Highcharts);
@@ -324,7 +325,7 @@ const HeatmapChart = () => {
       console.log(selectedDate);
     };
   return (
-    <div>
+    <div className='wrapper'>
       <HighchartsReact
         highcharts={Highcharts}
         options={{

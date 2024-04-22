@@ -52,7 +52,8 @@ function Sup({ option }) {
         {/* <StepCountsGraph /> */}
 
       <div style={{ position: 'relative',top:'20vh' }}>
-        <Heatmap />
+        {/* <Cards_return /> */}
+        < Heatmap />
       </div>
       <div style={{position:'relative',top:'160vh'}}>
         <HeatmapChart/>
